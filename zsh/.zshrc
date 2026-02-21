@@ -34,6 +34,7 @@ alias untar='tar -zxvf'
 alias cleanpac='sudo pacman -Rns $(pacman -Qtdq)'
 alias fixpac='sudo rm /var/lib/pacman/db.lck'
 alias mirrorpac='sudo cachyos-rate-mirrors'
+alias gitpush='git add . && git commit -m "update" && git pull --rebase origin main && git push'
 
 # Enable completion system
 autoload -Uz compinit
