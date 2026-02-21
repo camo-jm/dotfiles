@@ -1,7 +1,7 @@
-# If not running interactively, don't do anything
-[[ -o interactive ]] || return
+[[ -o interactive ]] || return # If not running interactively, don't do anything
 
-# History settings
+bindkey -e # emacs mode
+
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
@@ -16,17 +16,16 @@ HISTFILE=~/.zsh_history
 HISTIGNORE="ls:eza:cd:pwd:exit"
 
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export TERM="kitty"
 export EDITOR="nvim"
+export BROWSER="helium"
 export PAGER="less"
 export LESS="-FRX"
 
-# Aliases
-alias pls='sudo'
 alias l='eza -l --color=always --group-directories-first --icons --sort=size'
 alias la='eza -l --color=always --group-directories-first --icons --sort=size -a'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ....='cd ../../..'
 alias wget='wget -c'
 alias grep='grep --color=auto -E'
 alias dotar='tar -acf'
@@ -36,9 +35,12 @@ alias fixpac='sudo rm /var/lib/pacman/db.lck'
 alias mirrorpac='sudo cachyos-rate-mirrors'
 alias gitpush='git add . && git commit -m "update" && git pull --rebase --autostash && git push'
 
-# Enable completion system
 autoload -Uz compinit
-compinit
+compinit # Enable completion system
 
-# Prompt
 PROMPT='|%F{blue}%n@%m%f %F{magenta}%?%f %F{green}%~%f %B>_%b '
+
+# Plugins
+source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
