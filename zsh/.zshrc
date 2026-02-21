@@ -13,10 +13,10 @@ setopt NO_CLOBBER # Prevent overwriting files with >
 HISTSIZE=10000
 SAVEHIST=20000
 HISTFILE=~/.zsh_history
-HISTIGNORE="ls:cd:pwd:exit"
+HISTIGNORE="ls:eza:cd:pwd:exit"
 
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-export EDITOR="vim"
+export EDITOR="nvim"
 export PAGER="less"
 export LESS="-FRX"
 
@@ -42,4 +42,3 @@ compinit
 
 # Prompt
 PROMPT='|%F{blue}%n@%m%f %F{magenta}%?%f %F{green}%~%f %B>_%b '
-
