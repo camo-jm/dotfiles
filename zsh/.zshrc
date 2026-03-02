@@ -1,6 +1,6 @@
 [[ -o interactive ]] || return # If not running interactively, don't do anything
 
-bindkey -e # emacs mode
+# bindkey -e # emacs mode
 
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
