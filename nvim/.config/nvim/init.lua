@@ -7,7 +7,7 @@ plugins = {'catppuccin/nvim', 'nvim-mini/mini.nvim', 'norcalli/nvim-colorizer.lu
 vim.call('plug#begin'); for _, p in ipairs(plugins) do Plug(p) end; vim.call('plug#end')
 
 -- setting up the plugins
-minis = {'bracketed', 'files', 'splitjoin', 'move', 'jump', 'pairs', 'surround', 'operators', 'completion', 'icons', 'tabline', 'statusline', 'indentscope',}
+minis = {'bracketed', 'files', 'splitjoin', 'move', 'jump', 'pairs', 'surround', 'operators', 'completion', 'icons', 'tabline', 'statusline', 'indentscope', 'git',}
 for _, m in ipairs(minis) do require('mini.' .. m).setup() end
 require('colorizer').setup{'*'}
 
