@@ -22,8 +22,9 @@ export BROWSER="helium"
 export PAGER="less"
 export LESS="-FRX"
 
-alias l='eza -l --color=always --group-directories-first --icons --sort=size'
-alias la='eza -l --color=always --group-directories-first --icons --sort=size -a'
+alias l='eza -l --color=always --group-directories-first --icons'
+alias la='eza -l --color=always --group-directories-first --icons -a'
+alias lf='yazi'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias wget='wget -c'
