@@ -1,6 +1,5 @@
 [[ -o interactive ]] || return # If not running interactively, don't do anything
-
-# bindkey -e # emacs mode
+PROMPT='|%F{blue}%n@%m%f %F{magenta}%?%f %F{green}%~%f %B>_%b '
 
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
@@ -16,32 +15,43 @@ HISTFILE=~/.zsh_history
 HISTIGNORE="ls:eza:cd:pwd:exit"
 
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-export TERM="kitty"
+export TERM="foot"
 export EDITOR="nvim"
 export BROWSER="helium"
 export PAGER="less"
 export LESS="-FRX"
 
+autoload -Uz compinit
+compinit # Enable completion system
+
+alias sd='sudo'
+alias ps=''
 alias l='eza -l --color=always --group-directories-first --icons'
 alias la='eza -l --color=always --group-directories-first --icons -a'
 alias lf='yazi'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
+
 alias wget='wget -c'
-alias grep='grep --color=auto -E'
-alias dotar='tar -acf'
-alias untar='tar -zxvf'
-alias cleanpac='sudo pacman -Rns $(pacman -Qtdq)'
-alias fixpac='sudo rm /var/lib/pacman/db.lck'
-alias mirrorpac='sudo cachyos-rate-mirrors'
-alias gitpush='git add . && git commit -m "update" && git pull --rebase --autostash && git push'
+alias gr='grep --color=auto -E'
+alias dtar='tar -acf'
+alias utar='tar -zxvf'
 
-autoload -Uz compinit
-compinit # Enable completion system
+alias pm='pacman'
+alias pmi='pacman -Syuu'
+alias cleanpm='sudo pacman -Rns $(pacman -Qtdq)'
+alias fixpm='sudo rm /var/lib/pacman/db.lck'
+alias mirrorpm='sudo cachyos-rate-mirrors'
 
-PROMPT='|%F{blue}%n@%m%f %F{magenta}%?%f %F{green}%~%f %B>_%b '
+alias g='git'
+alias gp='git add . && git commit -m "update" && git pull --rebase --autostash && git push'
+
+alias yt='yt-dlp --embed-metadata -i'
+alias rss='newsboat'
 
 # Plugins
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+
