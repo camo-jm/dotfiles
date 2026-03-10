@@ -45,7 +45,8 @@ alias fixpm='sudo rm /var/lib/pacman/db.lck'
 alias mirrorpm='sudo cachyos-rate-mirrors'
 
 alias g='git'
-alias gp='git add . && git commit -m "update" && git pull --rebase --autostash && git push'
+alias gp='git add . && git commit -m "update" && git pull&& git push'
+# git push --rebase --autostash 
 
 alias yt='yt-dlp --embed-metadata -i'
 alias rss='newsboat'

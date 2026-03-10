@@ -8,7 +8,7 @@ vim.call('plug#begin'); for _, p in ipairs(Plugins) do Plug(p) end; vim.call('pl
 
 -- mini.nvim plugins + language servers
 Minis = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed'}
-Ls = {'pyright', 'lua_ls', 'clangd', 'shellcheck'}
+Ls = {'pyright', 'lua_ls', 'clangd'} -- 'shellcheck'
 
 for _, m in ipairs(Minis) do require('mini.' .. m).setup() end
 for _, l in ipairs(Ls) do vim.lsp.enable(l) end
