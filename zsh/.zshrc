@@ -24,35 +24,20 @@ export LESS="-FRX"
 autoload -Uz compinit
 compinit # Enable completion system
 
-alias sd='sudo'
-alias ps=''
 alias l='eza -l --color=always --group-directories-first --icons'
 alias la='eza -l --color=always --group-directories-first --icons -a'
 alias lf='yazi'
+alias wget='wget -c'
+alias grep='grep --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias wget='wget -c'
-alias gr='grep --color=auto -E'
-alias dtar='tar -acf'
-alias utar='tar -zxvf'
-
-alias pm='pacman'
-alias pmi='pacman -Syuu'
 alias cleanpm='sudo pacman -Rns $(pacman -Qtdq)'
 alias fixpm='sudo rm /var/lib/pacman/db.lck'
 alias mirrorpm='sudo cachyos-rate-mirrors'
-
-alias g='git'
-alias gp='git add . && git commit -m "update" && git pull&& git push'
-# git push --rebase --autostash 
-
-alias yt='yt-dlp --embed-metadata -i'
-alias rss='newsboat'
 
 # Plugins
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-
