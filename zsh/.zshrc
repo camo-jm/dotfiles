@@ -20,6 +20,7 @@ export EDITOR="nvim"
 export BROWSER="helium"
 export PAGER="less"
 export LESS="-FRX"
+export __GL_THREADED_OPTIMIZATIONS=0
 
 autoload -Uz compinit
 compinit # Enable completion system

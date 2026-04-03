@@ -14,7 +14,15 @@ for _, m in ipairs(Minis) do require('mini.' .. m).setup() end
 for _, l in ipairs(Ls) do vim.lsp.enable(l) end
 vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
 
+vim.lsp.config("lua_ls", {
+	settings = { Lua = { workspace = { library = { "${3rd}/love2d/library",
+}, }, }, }
+
+})
+
 -- more
 vim.cmd('colorscheme catppuccin')
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>')
+
+-- require("godot")
