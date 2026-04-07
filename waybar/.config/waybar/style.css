@@ -46,14 +46,15 @@ window#waybar {
 #tray,
 #memory,
 #window,
+#network,
+#temperature,
+#power-profiles-daemon,
+#battery,
 #mpris
 
-/* #temperature,
-#battery,
+/*
 #backlight,
-#power-profiles-daemon,
 #idle_inhibitor,
-#network,
 #mpd */
 {
   padding: 0.3rem 0.7rem;
@@ -78,6 +79,11 @@ window#waybar {
 
 window#waybar.empty #window {
   background-color: transparent;
+}
+
+#power-profiles-daemon {
+	color: #b4befe;
+	box-shadow: inset 0 -3px transparent;
 }
 
 #cpu {
@@ -114,6 +120,22 @@ window#waybar.empty #window {
 
 #custom-power {
   color: #f38ba8;
+}
+
+#temperature {
+  color: #f38ba8;
+}
+
+#temperature.critical {
+	color: #f38ba8;
+}
+
+#battery {
+	color: #a6e3a1;
+}
+
+#network {
+	color: #b4befe;
 }
 
 tooltip {

@@ -2,9 +2,11 @@
 vim.cmd('set tgc cul nowrap nu sb sb scs spr sta vb list cc=80 ts=4 sw=4 so=10 siso=10 path+=**')
 
 -- plugins
-local vim = vim; local Plug = vim.fn['plug#']
-Plugins = {'catppuccin/nvim', 'nvim-mini/mini.nvim', 'neovim/nvim-lspconfig'}
-vim.call('plug#begin'); for _, p in ipairs(Plugins) do Plug(p) end; vim.call('plug#end')
+vim.pack.add({
+	'https://github.com/catppuccin/nvim',
+	'https://github.com/nvim-mini/mini.nvim',
+	'https://github.com/neovim/nvim-lspconfig'
+})
 
 -- mini.nvim plugins + language servers
 Minis = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed'}
@@ -24,5 +26,3 @@ vim.lsp.config("lua_ls", {
 vim.cmd('colorscheme catppuccin')
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>')
-
--- require("godot")
