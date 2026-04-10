@@ -8,13 +8,13 @@
 
 window#waybar {
   transition-property: background-color;
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
   background-color: rgba(24, 24, 37, 0.6);
 }
 
 #workspaces button {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
+  padding: 0rem 0.6rem;
+  margin: 0.4rem 0.15rem;
   border-radius: 0px;
   background-color: #181825;
   /* background-color: #1e1e2e; */
@@ -50,22 +50,25 @@ window#waybar {
 #temperature,
 #power-profiles-daemon,
 #battery,
-#mpris
+#mpris,
+#backlight,
+#mpd
 
 /*
-#backlight,
 #idle_inhibitor,
-#mpd */
+*/
 {
   padding: 0.3rem 0.7rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 0px;
-  /* background-color: #181825; */
+  margin: 0.4rem 0rem;
   background-color: #1e1e2e;
 }
 
-#mpris.playing {
+#mpd {
   color: #a6e3a1;
+}
+
+#mpris.playing {
+  color: #74c7ec;
 }
 
 #mpris.paused {
@@ -135,6 +138,10 @@ window#waybar.empty #window {
 }
 
 #network {
+	color: #b4befe;
+}
+
+#backlight {
 	color: #b4befe;
 }
 

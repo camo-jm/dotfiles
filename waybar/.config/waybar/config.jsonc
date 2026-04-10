@@ -5,8 +5,7 @@
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
 		"clock",
-		"mpd",
-		"custom/media"
+		"tray"
     ],
     "modules-center": [
 		"hyprland/workspaces",
@@ -17,13 +16,13 @@
 		"network",
 		"pulseaudio",
 		"power-profiles-daemon",
-		"tray",
+		"backlight",
 		"custom/power"
 
 		/*
-		"backlight",
 		"idle_inhibitor",
 		"hyprland/language",
+		"mpd",
 		*/
     ],
 
@@ -97,7 +96,7 @@
     },
     "temperature": {
         "critical-threshold": 80,
-        "format": "{icon}",
+        "format": "{temperatureC} {icon}",
         "format-icons": ["", "", "󰈸"]
     },
     "backlight": {
@@ -110,13 +109,14 @@
             "warning": 30,
             "critical": 15
         },
-        "format":			"{icon}",	/* "{capacity}% {icon}"*/
-        "format-full":		"{icon}",	/* "{capacity}% {icon}"*/
-        "format-charging":	"{icon}",	/* "{capacity}% "*/
-        "format-plugged":	"{icon}",	/* "{capacity}% "*/
-        "format-alt":		"{icon}",	/* "{time} {icon}"*/
+        "format":			"{capacity} {icon}",	/* "{capacity}% {icon}"*/
+        "format-full":		"{capacity} {icon}",	/* "{capacity}% {icon}"*/
+        "format-charging":	"{capacity} {icon}",	/* "{capacity}% "*/
+        "format-plugged":	"{capacity} {icon}",	/* "{capacity}% "*/
+        "format-alt":		"{capacity} {icon}",	/* "{time} {icon}"*/
         "format-icons": 	["󰂎", "󰁻", "󰁾", "󰂁", "󰁹"]
     },
+
     "power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -128,6 +128,7 @@
         "power-saver": "󰾆"
       }
     },
+
     "network": {
         "format-wifi": " ", //{essid}
         "format-ethernet": "󰈀 ", //{ipaddr}/{cidr}
@@ -136,6 +137,7 @@
         "format-disconnected": "!",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} ", /*{format_source}*/
@@ -167,6 +169,7 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
+
 	"hyprland/language": {
 		"format": "{short}"
 	},
