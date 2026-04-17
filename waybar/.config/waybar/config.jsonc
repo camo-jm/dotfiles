@@ -13,9 +13,9 @@
     "modules-right": [
 		"temperature",
 		"battery",
+		"power-profiles-daemon",
 		"network",
 		"pulseaudio",
-		"power-profiles-daemon",
 		"backlight",
 		"custom/power"
 
@@ -95,9 +95,10 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "temperature": {
+		"warning-threshold": 60,
         "critical-threshold": 80,
         "format": "{temperatureC} {icon}",
-        "format-icons": ["", "", "󰈸"]
+        "format-icons": ["", "", ""]
     },
     "backlight": {
         "format": "{icon}",
@@ -111,8 +112,8 @@
         },
         "format":			"{capacity} {icon}",	/* "{capacity}% {icon}"*/
         "format-full":		"{capacity} {icon}",	/* "{capacity}% {icon}"*/
-        "format-charging":	"{capacity} {icon}",	/* "{capacity}% "*/
-        "format-plugged":	"{capacity} {icon}",	/* "{capacity}% "*/
+        "format-charging":	"{capacity} ",	/* "{capacity}% "*/
+        "format-plugged":	"{capacity} ",	/* "{capacity}% "*/
         "format-alt":		"{capacity} {icon}",	/* "{time} {icon}"*/
         "format-icons": 	["󰂎", "󰁻", "󰁾", "󰂁", "󰁹"]
     },
