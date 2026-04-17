@@ -79,8 +79,8 @@ window#waybar {
   color: #585b70;
 }
 
-#clock { color: #74c7ec; }
-#clock.simpleclock { color: #89b4fa; } /*TODO*/
+#clock { color:@good; } /*color: #74c7ec;*/
+/*#clock.simpleclock { color: #89b4fa; }*/ /*TODO*/
 
 window#waybar.empty #window { background-color: transparent; }
 #window { color: #cdd6f4; }
@@ -102,7 +102,7 @@ window#waybar.empty #window { background-color: transparent; }
 #power-profiles-daemon.balanced { color: @warn; }
 #power-profiles-daemon.performance { color: @bad; }
 
-#temperature { color: @good; }
+#temperature { color: @accent; }
 #temperature.warning { color: @warn; }
 #temperature.critical {
 	color: @bad;
@@ -110,7 +110,7 @@ window#waybar.empty #window { background-color: transparent; }
 }
 
 #pulseaudio { color: #b4befe; }
-#pulseaudio.muted { color: #a6adc8; }
+#pulseaudio.muted { color: alpha(@accent, 0.25); }
 
 #network { color: #b4befe; }
 

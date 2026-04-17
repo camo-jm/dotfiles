@@ -12,12 +12,12 @@
     ],
     "modules-right": [
 		"temperature",
-		"battery",
 		"power-profiles-daemon",
 		"network",
 		"pulseaudio",
 		"backlight",
-		"custom/power"
+		"battery"
+		/*"custom/power"*/
 
 		/*
 		"idle_inhibitor",
@@ -97,7 +97,7 @@
     "temperature": {
 		"warning-threshold": 60,
         "critical-threshold": 80,
-        "format": "{temperatureC} {icon}",
+        "format": "{icon}", /*{temperatureC} */
         "format-icons": ["", "", ""]
     },
     "backlight": {
