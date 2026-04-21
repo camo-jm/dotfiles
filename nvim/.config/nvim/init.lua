@@ -1,4 +1,5 @@
-vim.cmd('set tgc cul nowrap nu sb sb scs spr sta vb list cc=80 ts=4 sw=4 so=10 siso=10 path+=**')
+vim.cmd('set tgc cul nowrap nu sb scs spr sta vb list cc=80 ts=4 sw=4 so=10 siso=10 path+=**')
+--testingaafdasfdsafdsfdsafdsafdsafs
 
 -- plugins
 vim.pack.add({
@@ -7,7 +8,7 @@ vim.pack.add({
 	'https://github.com/neovim/nvim-lspconfig'
 })
 
-Minis = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed'}
+Minis = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git'}
 for _, m in ipairs(Minis) do require('mini.' .. m).setup() end
 vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
 
