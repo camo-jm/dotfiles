@@ -1,2 +1,2 @@
 include ~/.newsboat/dark
-
+browser "xdg-open %u"

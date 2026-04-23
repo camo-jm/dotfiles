@@ -1,23 +1,23 @@
 vim.cmd('set tgc cul nowrap nu sb scs spr sta vb list cc=80 ts=4 sw=4 so=10 siso=10 path+=**')
---testingaafdasfdsafdsfdsafdsafdsafs
 
--- plugins
 vim.pack.add({
 	'https://github.com/catppuccin/nvim',
 	'https://github.com/nvim-mini/mini.nvim',
 	'https://github.com/neovim/nvim-lspconfig'
 })
 
-Minis = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git'}
+-- mini.nvim config
+Minis = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff'}
 for _, m in ipairs(Minis) do require('mini.' .. m).setup() end
 vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
 
+-- commands
 vim.cmd('colorscheme catppuccin')
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>')
+vim.keymap.set('n', '<leader>t', ':80vsplit | te<CR>')
 
--- LSP configs
--- lua
+-- LSP config: lua
 vim.lsp.config("lua_ls", {
 	filetypes = { "lua" },
 	settings = {
@@ -27,7 +27,7 @@ vim.lsp.config("lua_ls", {
 			workspace = { library = { "${3rd}/love2d/library"
 },},},},})
 
--- typst
+-- LSP config: typst
 vim.lsp.config("tinymist", {
 	cmd = { "tinymist" },
 	filetypes = { "typst" },
@@ -35,7 +35,7 @@ vim.lsp.config("tinymist", {
 		formatterMode = "typstyle",
 },})
 
--- loading the necessary LSPs
+-- LSP loading
 for k, v in pairs({
 	pyright = { "python" },
 	lua_ls = { "lua" },
