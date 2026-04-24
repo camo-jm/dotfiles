@@ -1,2 +1,4 @@
 newsboat/.newsboat/cache.db
-newsboat/.newsboat/history*
+newsboat/.newsboat/queue
+newsboat/.newsboat/history.search
+newsboat/.newsboat/history.cmdline
