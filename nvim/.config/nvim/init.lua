@@ -3,7 +3,7 @@ vim.cmd('set tgc cul nowrap nu sb scs spr sta vb list cc=80 ts=4 sw=4 so=10 siso
 vim.pack.add({
 	'https://github.com/catppuccin/nvim',
 	'https://github.com/nvim-mini/mini.nvim',
-	'https://github.com/neovim/nvim-lspconfig'
+	'https://github.com/neovim/nvim-lspconfig',
 })
 
 -- mini.nvim config
