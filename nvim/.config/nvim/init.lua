@@ -16,6 +16,7 @@ vim.cmd('colorscheme catppuccin')
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>')
 vim.keymap.set('n', '<leader>t', ':80vsplit | te<CR>')
+vim.keymap.set('n', '<leader>b', ':lua require("mini.git").show_at_cursor()<CR>')
 
 -- LSP config: lua
 vim.lsp.config("lua_ls", {
