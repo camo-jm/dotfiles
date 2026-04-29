@@ -1,9 +1,12 @@
 vim.cmd('set tgc cul nowrap nu sb scs spr sta vb list cc=80 ts=4 sw=4 so=10 siso=10 path+=**')
+vim.cmd('filetype plugin indent on')
+vim.g.doge_enable_mappings = 0
 
 vim.pack.add({
 	'https://github.com/catppuccin/nvim',
 	'https://github.com/nvim-mini/mini.nvim',
 	'https://github.com/neovim/nvim-lspconfig',
+	'https://github.com/kkoomen/vim-doge', --TODO: doge#install() automation, or saying fuck it and changing the plugin
 })
 
 -- mini.nvim config
@@ -17,6 +20,7 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>')
 vim.keymap.set('n', '<leader>t', ':80vsplit | te<CR>')
 vim.keymap.set('n', '<leader>b', ':lua require("mini.git").show_at_cursor()<CR>')
+vim.keymap.set("n", "<leader>c", "<Plug>(doge-generate)")
 
 -- LSP config: lua
 vim.lsp.config("lua_ls", {

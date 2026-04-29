@@ -2,3 +2,5 @@ newsboat/.newsboat/cache.db
 newsboat/.newsboat/queue
 newsboat/.newsboat/history.search
 newsboat/.newsboat/history.cmdline
+
+nvim/.config/nvim/nvim-pack-lock.json
