@@ -1,6 +1,7 @@
 vim.cmd('set tgc cul nowrap nu sb scs spr sta vb list cc=80 ts=4 sw=4 so=10 siso=10 path+=**')
 vim.cmd('filetype plugin indent on')
 vim.g.doge_enable_mappings = 0
+vim.g.doge_doc_standard_python = 'google'
 
 vim.pack.add({
 	'https://github.com/catppuccin/nvim',
