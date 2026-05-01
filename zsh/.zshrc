@@ -34,6 +34,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+alias ug='sudo topgrade'
+alias vi='nvim'
+alias ai='aichat'
+
 alias cleanpm='sudo pacman -Rns $(pacman -Qtdq)'
 alias fixpm='sudo rm /var/lib/pacman/db.lck'
 alias mirrorpm='sudo cachyos-rate-mirrors'
