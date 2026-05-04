@@ -10,10 +10,14 @@ vim.pack.add({
 	'https://github.com/kkoomen/vim-doge', --TODO: doge#install() automation, or saying fuck it and changing the plugin
 })
 
+vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
+
 -- mini.nvim config
 Minis = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff'}
-for _, m in ipairs(Minis) do require('mini.' .. m).setup() end
-vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
+for _, m in ipairs(Minis) do
+	require('mini.' .. m).setup()
+end
+
 
 -- commands
 vim.cmd('colorscheme catppuccin')
