@@ -1,4 +1,4 @@
-vim.cmd('set tgc cul nowrap nu sb scs spr sta vb list cc=80 ts=4 sw=4 so=10 siso=10 path+=**')
+vim.cmd('set tgc cul nowrap nu sb scs spr sta vb et list cc=80 ts=4 sw=4 so=10 siso=10 path+=**')
 vim.cmd('filetype plugin indent on')
 vim.g.doge_enable_mappings = 0
 vim.g.doge_doc_standard_python = 'google'
@@ -17,7 +17,6 @@ Minis = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline',
 for _, m in ipairs(Minis) do
 	require('mini.' .. m).setup()
 end
-
 
 -- commands
 vim.cmd('colorscheme catppuccin')
