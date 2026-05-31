@@ -4,17 +4,37 @@
       "rev": "66597ac1fbb699347ddc558105924e274f912748",
       "src": "https://github.com/himkt/docstring.nvim"
     },
+    "mason-lspconfig.nvim": {
+      "rev": "7b01e2974a47d489bb92f47a41e4c0088ea8f86e",
+      "src": "https://github.com/mason-org/mason-lspconfig.nvim"
+    },
+    "mason.nvim": {
+      "rev": "bb639d4bf385a4d89f478b83af4d770be05ab7eb",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
     "mini.nvim": {
-      "rev": "be81509b7160aa02264a59789164a2e1c4a6750a",
+      "rev": "15abccbe23525ee0502d2efe620c77db00bfb93c",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim": {
-      "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
+      "rev": "8edd468af4d63212b84d69b2ddb5ffc9023ef5eb",
       "src": "https://github.com/catppuccin/nvim"
     },
     "nvim-lspconfig": {
-      "rev": "0e25d7445ba0d7cc0ad02a39aa843cc8b9d2525e",
+      "rev": "9573948c38bfabeec353ae7dd7d3ffec4c506a6b",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "todo": {
+      "rev": "4125555878f6e64c27fc4b1f63eae6c67f45bc6c",
+      "src": "https://codeberg.org/smeikx/todo.nvim"
+    },
+    "todo.nvim": {
+      "rev": "4125555878f6e64c27fc4b1f63eae6c67f45bc6c",
+      "src": "https://codeberg.org/smeikx/todo.nvim"
+    },
+    "todotxt.nvim": {
+      "rev": "6f43481682faed7d1d171c40238df04220c28cda",
+      "src": "https://github.com/phrmendes/todotxt.nvim"
     },
     "vim-doge": {
       "rev": "03a84072ef21b205237c77986c78914395d646c3",
