@@ -7,13 +7,13 @@ vim.pack.add({
 	'https://github.com/nvim-mini/mini.nvim',
 	'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/mason-org/mason.nvim',
+    'https://github.com/mason-org/mason-lspconfig.nvim',
     --'https://github.com/phrmendes/todotxt.nvim', --TODO: fix this or find an alternative
     'https://github.com/kkoomen/vim-doge', --TODO: doge#install() automation, or saying fuck it and changing the plugin
 })
 
 MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff'}
-ENSURE_LSP = {'zls', 'lua-language-server', 'clangd', 'pyright'}
-ENABLE_LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
+LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
 
 -- commands
@@ -31,10 +31,10 @@ vim.g.doge_doc_standard_python = 'google'
 for _, m in ipairs(MINIS) do
 	require('mini.' .. m).setup()
 end
+require('mason').setup()
+require('mason-lspconfig').setup({ ensure_installed = LSP, })
 
-require('mason').setup({ ensure_installed = ENSURE_LSP, })
-for _, server in pairs(ENABLE_LSP) do vim.lsp.enable(server) end
-
+for _, server in ipairs(LSP) do vim.lsp.enable(server) end
 
 -- LSP configs
 vim.lsp.config('lua_ls', {
@@ -45,10 +45,3 @@ vim.lsp.config('lua_ls', {
 			diagnostics = {globals = { 'vim' },},
 			workspace = { library = { '${3rd}/love2d/library'},},
 },},})
-
-vim.lsp.config('tinymist', {
-	cmd = { 'tinymist' },
-	filetypes = { 'typst' },
-	settings = {
-		formatterMode = 'typstyle',
-},})
