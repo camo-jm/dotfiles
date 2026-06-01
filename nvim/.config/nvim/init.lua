@@ -15,7 +15,6 @@ vim.pack.add({
 MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff'}
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
-
 -- commands
 vim.cmd('colorscheme catppuccin')
 vim.g.mapleader = ' '
