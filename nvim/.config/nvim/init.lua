@@ -8,11 +8,11 @@ vim.pack.add({
 	'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/mason-org/mason.nvim',
     'https://github.com/mason-org/mason-lspconfig.nvim',
-    --'https://github.com/phrmendes/todotxt.nvim', --TODO: fix this or find an alternative
     'https://github.com/kkoomen/vim-doge', --TODO: doge#install() automation, or saying fuck it and changing the plugin
+    'https://github.com/phrmendes/todotxt.nvim',
 })
 
-MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff'}
+MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns'} --clue
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
 -- commands
@@ -22,20 +22,37 @@ vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>')
 vim.keymap.set('n', '<leader>t', ':80vsplit | te<CR>')
 vim.keymap.set('n', '<leader>b', ':lua require("mini.git").show_at_cursor()<CR>')
 vim.keymap.set('n', '<leader>c', '<Plug>(doge-generate)')
+vim.keymap.set('n', '<leader>l', ':TodoTxt<CR>')
+
+-- vim-doge (comments)
 vim.g.doge_enable_mappings = 0
 vim.g.doge_doc_standard_python = 'google'
 
-
--- plugins config
+-- mini.nvim config
 for _, m in ipairs(MINIS) do
 	require('mini.' .. m).setup()
 end
+
+local hipatterns = require('mini.hipatterns')
+hipatterns.setup({
+  highlighters = {
+    fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+    hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
+    todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
+    note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
+    hex_color = hipatterns.gen_highlighter.hex_color(),
+  },})
+
+-- todotxt.nvim setup
+vim.filetype.add({filename = {["todo.txt"] = "todotxt", ["done.txt"] = "todotxt",},})
+require("todotxt").setup({todotxt = vim.env.HOME .. "/Downloads/todo.txt",})
+
+-- mason + LSPs setup
 require('mason').setup()
 require('mason-lspconfig').setup({ ensure_installed = LSP, })
 
 for _, server in ipairs(LSP) do vim.lsp.enable(server) end
 
--- LSP configs
 vim.lsp.config('lua_ls', {
 	filetypes = { 'lua' },
 	settings = {
