@@ -37,6 +37,7 @@ alias ....='cd ../../..'
 alias ug='sudo topgrade'
 alias vi='nvim'
 alias ai='aichat'
+alias pf='pfetch'
 
 alias cleanpm='sudo pacman -Rns $(pacman -Qtdq)'
 alias fixpm='sudo rm /var/lib/pacman/db.lck'

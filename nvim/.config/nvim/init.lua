@@ -12,7 +12,7 @@ vim.pack.add({
     'https://github.com/phrmendes/todotxt.nvim',
 })
 
-MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns'} --clue
+MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter'} --clue
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
 -- commands
@@ -45,7 +45,7 @@ hipatterns.setup({
 
 -- todotxt.nvim setup
 vim.filetype.add({filename = {["todo.txt"] = "todotxt", ["done.txt"] = "todotxt",},})
-require("todotxt").setup({todotxt = vim.env.HOME .. "/Downloads/todo.txt",})
+require("todotxt").setup({todotxt = vim.env.HOME .. "/Documents/todo.txt",})
 
 -- mason + LSPs setup
 require('mason').setup()
