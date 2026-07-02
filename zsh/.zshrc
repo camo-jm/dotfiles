@@ -43,6 +43,8 @@ alias cleanpm='sudo pacman -Rns $(pacman -Qtdq)'
 alias fixpm='sudo rm /var/lib/pacman/db.lck'
 alias mirrorpm='sudo cachyos-rate-mirrors'
 
+alias tp='git add .; git commit -m "preparando el sprint"; git push'
+
 # Plugins
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

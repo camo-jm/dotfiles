@@ -8,8 +8,9 @@ vim.pack.add({
 	'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/mason-org/mason.nvim',
     'https://github.com/mason-org/mason-lspconfig.nvim',
-    'https://github.com/kkoomen/vim-doge', --TODO: doge#install() automation, or saying fuck it and changing the plugin
     'https://github.com/phrmendes/todotxt.nvim',
+    'https://github.com/bkp5190/rduck.nvim',
+    'https://github.com/nvim-treesitter/nvim-treesitter'
 })
 
 MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter'} --clue
@@ -21,12 +22,10 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>')
 vim.keymap.set('n', '<leader>t', ':80vsplit | te<CR>')
 vim.keymap.set('n', '<leader>b', ':lua require("mini.git").show_at_cursor()<CR>')
-vim.keymap.set('n', '<leader>c', '<Plug>(doge-generate)')
 vim.keymap.set('n', '<leader>l', ':TodoTxt<CR>')
-
--- vim-doge (comments)
-vim.g.doge_enable_mappings = 0
-vim.g.doge_doc_standard_python = 'google'
+vim.keymap.set('n', '<leader>a', ':TodoTxt new<CR>')
+vim.keymap.set('n', '<leader>c', ':DoneTxt<CR>')
+vim.keymap.set('n', '<leader>d', '<cmd>Duck<CR>')
 
 -- mini.nvim config
 for _, m in ipairs(MINIS) do
@@ -40,12 +39,32 @@ hipatterns.setup({
     hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
     todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
     note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
+    -- TODO MAINFX
     hex_color = hipatterns.gen_highlighter.hex_color(),
   },})
 
 -- todotxt.nvim setup
-vim.filetype.add({filename = {["todo.txt"] = "todotxt", ["done.txt"] = "todotxt",},})
-require("todotxt").setup({todotxt = vim.env.HOME .. "/Documents/todo.txt",})
+vim.filetype.add({
+    filename = {["todo.txt"] = "todotxt", ["done.txt"] = "todotxt", ["backlog.txt"] = "todotxt"},})
+require("todotxt").setup({
+    todotxt = vim.env.HOME .. "/Documents/todo.txt",
+    prefix = " ",
+    highlight = "Comment",
+})
+
+-- treesitter
+local ts = require('nvim-treesitter')
+ts.install({ 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt' }):wait(30000)
+
+vim.api.nvim_create_autocmd('FileType', {
+	group = vim.api.nvim_create_augroup('treesitter-start', { clear = true }),
+	callback = function(event)
+		local lang = event.match
+		local ok, task = pcall(ts.install, { lang })
+		if ok then task:wait(10000) end
+		pcall(vim.treesitter.start, event.buf, lang)
+	end,
+})
 
 -- mason + LSPs setup
 require('mason').setup()
