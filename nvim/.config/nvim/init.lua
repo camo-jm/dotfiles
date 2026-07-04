@@ -48,8 +48,32 @@ vim.filetype.add({
     filename = {["todo.txt"] = "todotxt", ["done.txt"] = "todotxt", ["backlog.txt"] = "todotxt"},})
 require("todotxt").setup({
     todotxt = vim.env.HOME .. "/Documents/todo.txt",
+    donetxt = vim.env.HOME .. "/Documents/done.txt",
     prefix = " ",
     highlight = "Comment",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "todotxt",
+	callback = function(event)
+		vim.keymap.set("n", "<leader>x", function()
+			vim.lsp.buf.code_action({
+				filter = function(action)
+					return action.title:match("Toggle done") ~= nil
+				end,
+				apply = true,
+			})
+		end, { buffer = event.buf, desc = "Toggle task done" })
+
+		vim.keymap.set("n", "<leader>m", function()
+			vim.lsp.buf.code_action({
+				filter = function(action)
+					return action.title:lower():match("move") ~= nil
+				end,
+				apply = true,
+			})
+		end, { buffer = event.buf, desc = "Move done tasks to done.txt" })
+	end,
 })
 
 -- treesitter
