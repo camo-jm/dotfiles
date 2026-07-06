@@ -64,15 +64,6 @@ vim.api.nvim_create_autocmd("FileType", {
 				apply = true,
 			})
 		end, { buffer = event.buf, desc = "Toggle task done" })
-
-		vim.keymap.set("n", "<leader>m", function()
-			vim.lsp.buf.code_action({
-				filter = function(action)
-					return action.title:lower():match("move") ~= nil
-				end,
-				apply = true,
-			})
-		end, { buffer = event.buf, desc = "Move done tasks to done.txt" })
 	end,
 })
 
