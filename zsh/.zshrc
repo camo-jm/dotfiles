@@ -27,7 +27,7 @@ compinit # Enable completion system
 
 alias l='eza -l --color=always --group-directories-first --icons'
 alias la='eza -l --color=always --group-directories-first --icons -a'
-alias lf='yazi'
+#alias lf='yazi'
 alias wget='wget -c'
 alias grep='grep --color=auto'
 alias ..='cd ..'
@@ -43,7 +43,14 @@ alias cleanpm='sudo pacman -Rns $(pacman -Qtdq)'
 alias fixpm='sudo rm /var/lib/pacman/db.lck'
 alias mirrorpm='sudo cachyos-rate-mirrors'
 
-alias tp='git add .; git commit -m "preparando el sprint"; git push'
+function lf() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # Plugins
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

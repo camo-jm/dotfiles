@@ -14,6 +14,7 @@ vim.pack.add({
 })
 
 MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter'} --clue
+-- TODO: MAYBE: reformat this, define a dict for each file type with all things needed
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
 -- commands
@@ -26,6 +27,7 @@ vim.keymap.set('n', '<leader>l', ':TodoTxt<CR>')
 vim.keymap.set('n', '<leader>a', ':TodoTxt new<CR>')
 vim.keymap.set('n', '<leader>c', ':DoneTxt<CR>')
 vim.keymap.set('n', '<leader>d', '<cmd>Duck<CR>')
+-- TODO: '<leader>i', instruct llm, shows in 80vsp|te<CR>, can save it, etc
 
 -- mini.nvim config
 for _, m in ipairs(MINIS) do
@@ -45,7 +47,7 @@ hipatterns.setup({
 
 -- todotxt.nvim setup
 vim.filetype.add({
-    filename = {["todo.txt"] = "todotxt", ["done.txt"] = "todotxt", ["backlog.txt"] = "todotxt"},})
+    filename = {["todo.txt"] = "todotxt", ["done.txt"] = "todotxt"},})
 require("todotxt").setup({
     todotxt = vim.env.HOME .. "/Documents/todo.txt",
     donetxt = vim.env.HOME .. "/Documents/done.txt",
