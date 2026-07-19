@@ -38,6 +38,7 @@ alias ug='sudo topgrade'
 alias vi='nvim'
 alias ai='aichat'
 alias pf='pfetch'
+alias todo='todotxt-tui'
 
 alias cleanpm='sudo pacman -Rns $(pacman -Qtdq)'
 alias fixpm='sudo rm /var/lib/pacman/db.lck'
@@ -56,3 +57,4 @@ function lf() {
 source $HOME/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+export PATH="$HOME/.cargo/bin:$PATH"

@@ -1,24 +1,24 @@
-vim.cmd('set tgc cul nowrap nu sb scs spr sta vb et list cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
+vim.cmd('set tgc cul nowrap nu sb scs spr sta vb et list cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split') --cuc
 vim.cmd('filetype plugin indent on')
 vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
 
 vim.pack.add({
-	'https://github.com/catppuccin/nvim',
-	'https://github.com/nvim-mini/mini.nvim',
-	'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/nvim-mini/mini.nvim',
+    'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/mason-org/mason.nvim',
     'https://github.com/mason-org/mason-lspconfig.nvim',
     'https://github.com/phrmendes/todotxt.nvim',
     'https://github.com/bkp5190/rduck.nvim',
-    'https://github.com/nvim-treesitter/nvim-treesitter'
+    'https://github.com/nvim-treesitter/nvim-treesitter',
+    'https://github.com/RRethy/base16-nvim',
+    'https://github.com/David-Kunz/gen.nvim', --TODO setup
 })
 
-MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter'} --clue
+MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter', 'operators'} --clue
 -- TODO: MAYBE: reformat this, define a dict for each file type with all things needed
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
 -- commands
-vim.cmd('colorscheme catppuccin')
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>')
 vim.keymap.set('n', '<leader>t', ':80vsplit | te<CR>')
@@ -97,3 +97,7 @@ vim.lsp.config('lua_ls', {
 			diagnostics = {globals = { 'vim' },},
 			workspace = { library = { '${3rd}/love2d/library'},},
 },},})
+-- noctalia things
+
+local ok, matugen = pcall(require, 'matugen')
+if ok then matugen.setup() end
