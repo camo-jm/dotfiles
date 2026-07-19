@@ -14,6 +14,7 @@ vim.pack.add({
     'https://github.com/David-Kunz/gen.nvim', --TODO setup
 })
 
+TREESITTER = { 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt' }
 MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter', 'operators'} --clue
 -- TODO: MAYBE: reformat this, define a dict for each file type with all things needed
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
@@ -71,7 +72,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- treesitter
 local ts = require('nvim-treesitter')
-ts.install({ 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt' }):wait(30000)
+ts.install(TREESITTER):wait(30000)
 
 vim.api.nvim_create_autocmd('FileType', {
 	group = vim.api.nvim_create_augroup('treesitter-start', { clear = true }),
