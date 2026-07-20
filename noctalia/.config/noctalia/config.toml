@@ -1,0 +1,267 @@
+[audio]
+enable_sounds = true
+
+[bar]
+order = [ "temp" ]
+
+    [bar.temp]
+    capsule = true
+    capsule_radius = 0
+    center = [ "privacy", "workspaces" ]
+    end = [ "network", "group:g3", "brightness", "battery" ]
+    margin_ends = 0
+    padding = 5
+    radius = 0
+    show_on_workspace_switch = false
+    start = [ "clock", "tray", "cat", "group:g1" ]
+
+        [[bar.temp.capsule_group]]
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "media", "audio_visualizer" ]
+        opacity = 1.0
+        padding = 6.0
+        radius = 0.0
+
+        [[bar.temp.capsule_group]]
+        enabled = true
+        fill = "surface_variant"
+        id = "g3"
+        members = [ "volume", "input_volume" ]
+        opacity = 1.0
+        padding = 6.0
+        radius = 0.0
+
+[battery]
+warning_threshold = 20
+
+[control_center.calendar]
+show_events_card = false
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "keyboard_layout"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "clipboard"
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000002", "desktop-widget-0000000000000004" ]
+
+    [desktop_widgets.grid]
+    cell_size = 8
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 128.0
+    box_width = 200.0
+    cx = 1788.0
+    cy = 1112.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "weather"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        font_family = ""
+        forecast_days = 2
+        show_forecast = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 132.0
+    cy = 1112.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        display = "graph"
+        gauge_layout = "horizontal"
+        stat = "cpu_usage"
+        stat2 = "cpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000004]
+    box_height = 160.0
+    box_width = 1456.0
+    cx = 962.0
+    cy = 1120.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
+        background = false
+        bands = 32
+        centered = false
+        mirrored = true
+        show_when_idle = true
+
+[dock]
+launcher_position = "start"
+show_dots = true
+
+[location]
+auto_locate = true
+
+[lockscreen]
+blurred_desktop = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 1081.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+
+[nightlight]
+enabled = true
+temperature_night = 5500
+
+[notification]
+layer = "overlay"
+
+[plugin_settings."noctalia/notes"]
+extension = "md"
+notes_dir = "~/Documents/Notes"
+
+[plugins]
+enabled = [ "noctalia/bongocat", "noctalia/screen_recorder", "noctalia/kaomoji", "noctalia/notes" ]
+
+[shell]
+avatar_path = "/home/ookami/.face"
+external_ip_enabled = true
+font_family = "SpaceMono Nerd Font Mono"
+lang = "en"
+polkit_agent = true
+screen_time_enabled = true
+
+    [shell.launcher]
+    session_search = true
+
+        [shell.launcher.providers.calculator]
+        prefix = "cal"
+
+    [shell.panel]
+    clipboard_placement = "attached"
+
+[theme]
+builtin = "Nord"
+community_palette = "Matecito"
+mode = "dark"
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+[wallpaper]
+directory = "~/dotfiles/papes"
+fill_mode = "stretch"
+
+    [wallpaper.default]
+    path = "/home/ookami/dotfiles/papes/bliss-night.png"
+
+    [wallpaper.last]
+    path = "/home/ookami/dotfiles/papes/bliss-night.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/ookami/dotfiles/papes/bliss-night.png"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Nord"
+    palette_source = "builtin"
+    path = "/home/ookami/dotfiles/papes/catppuccin-neko.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Nord"
+    palette_source = "builtin"
+    path = "/home/ookami/dotfiles/papes/bliss.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Nord"
+    palette_source = "builtin"
+    path = "/home/ookami/dotfiles/papes/bliss-night.png"
+    theme_mode = "dark"
+
+[widget.audio_visualizer]
+bands = 4
+show_when_idle = true
+width = 28
+
+[widget.brightness]
+show_label = false
+
+[widget.cat]
+anchor = true
+input_devices = [ "/dev/input/by-path/*kbd" ]
+scale = 1.2
+tappy_mode = true
+type = "noctalia/bongocat:cat"
+use_mpris_filter = true
+
+[widget.clock]
+font_weight = 700
+
+[widget.input_volume]
+show_label = false
+
+[widget.media]
+max_length = 100
+min_length = 100
+title_scroll = "on_hover"
+
+[widget.privacy]
+hide_inactive = true
+
+[widget.sysmon]
+display = "text"
+
+[widget.tray]
+drawer = true
+match_adjacent_spacing = true
+
+[widget.volume]
+show_label = false
+
+[widget.workspaces]
+active_pill_size = 1.1000000000000001
+anchor = true
+capsule_radius = "auto"
+display = "name"
+focused_output_only = true
+font_weight = 700
+hide_when_empty = false
+inactive_pill_size = 1.1000000000000001
+scale = 1.2
+style = "focus_hint"
