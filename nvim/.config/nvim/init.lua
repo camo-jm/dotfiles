@@ -1,4 +1,4 @@
-vim.cmd('set tgc cul nowrap nu sb scs spr sta vb et list cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split') --cuc
+vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb et list cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
 vim.cmd('filetype plugin indent on')
 vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
 
@@ -10,8 +10,10 @@ vim.pack.add({
     'https://github.com/phrmendes/todotxt.nvim',
     'https://github.com/bkp5190/rduck.nvim',
     'https://github.com/nvim-treesitter/nvim-treesitter',
-    'https://github.com/RRethy/base16-nvim',
-    'https://github.com/David-Kunz/gen.nvim', --TODO setup
+    'https://github.com/shaunsingh/nord.nvim',
+    'https://github.com/David-Kunz/gen.nvim',                                   --TODO setup
+    -- 'https://github.com/catppuccin/nvim',
+    -- 'https://github.com/RRethy/base16-nvim',                                 --NOTE looks like shit with nord bc ,.;:
 })
 
 TREESITTER = { 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt' }
@@ -21,14 +23,15 @@ LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
 -- commands
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>')
-vim.keymap.set('n', '<leader>t', ':80vsplit | te<CR>')
-vim.keymap.set('n', '<leader>b', ':lua require("mini.git").show_at_cursor()<CR>')
-vim.keymap.set('n', '<leader>l', ':TodoTxt<CR>')
-vim.keymap.set('n', '<leader>a', ':TodoTxt new<CR>')
-vim.keymap.set('n', '<leader>c', ':DoneTxt<CR>')
-vim.keymap.set('n', '<leader>d', '<cmd>Duck<CR>')
+vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>', {desc = 'file tree'})
+vim.keymap.set('n', '<leader>t', ':80vsplit | te<CR>', {desc = 'terminal'})
+vim.keymap.set('n', '<leader>b', ':lua require("mini.git").show_at_cursor()<CR>', {desc = 'git history @line'})
+vim.keymap.set('n', '<leader>l', ':TodoTxt<CR>', {desc = 'todo file'})
+vim.keymap.set('n', '<leader>a', ':TodoTxt new<CR>', {desc = 'add task'})
+vim.keymap.set('n', '<leader>d', '<cmd>Duck<CR>', {desc = 'the duck.'})
 -- TODO: '<leader>i', instruct llm, shows in 80vsp|te<CR>, can save it, etc
+
+vim.cmd('colorscheme nord')
 
 -- mini.nvim config
 for _, m in ipairs(MINIS) do
@@ -42,7 +45,6 @@ hipatterns.setup({
     hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
     todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
     note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
-    -- TODO MAINFX
     hex_color = hipatterns.gen_highlighter.hex_color(),
   },})
 
@@ -98,7 +100,6 @@ vim.lsp.config('lua_ls', {
 			diagnostics = {globals = { 'vim' },},
 			workspace = { library = { '${3rd}/love2d/library'},},
 },},})
--- noctalia things
 
-local ok, matugen = pcall(require, 'matugen')
-if ok then matugen.setup() end
+-- matugen
+-- require('matugen').setup()
