@@ -12,12 +12,11 @@ vim.pack.add({
     'https://github.com/nvim-treesitter/nvim-treesitter',
     'https://github.com/shaunsingh/nord.nvim',
     'https://github.com/David-Kunz/gen.nvim',                                   --TODO setup
-    -- 'https://github.com/catppuccin/nvim',
     -- 'https://github.com/RRethy/base16-nvim',                                 --NOTE looks like shit with nord bc ,.;:
 })
 
 TREESITTER = { 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt' }
-MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter', 'operators'} --clue
+MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter', 'operators', 'clue'} --clue
 -- TODO: MAYBE: reformat this, define a dict for each file type with all things needed
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
@@ -37,6 +36,13 @@ vim.cmd('colorscheme nord')
 for _, m in ipairs(MINIS) do
 	require('mini.' .. m).setup()
 end
+
+local miniclue = require('mini.clue')
+miniclue.setup({
+    triggers = {
+        {mode = 'n', keys = '<leader>'},
+    }
+})
 
 local hipatterns = require('mini.hipatterns')
 hipatterns.setup({
