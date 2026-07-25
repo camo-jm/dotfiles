@@ -8,7 +8,6 @@ vim.pack.add({
 	'https://github.com/mason-org/mason.nvim',
 	'https://github.com/mason-org/mason-lspconfig.nvim',
 	'https://github.com/phrmendes/todotxt.nvim',
-	'https://github.com/bkp5190/rduck.nvim',
 	'https://github.com/nvim-treesitter/nvim-treesitter',
 	'https://github.com/shaunsingh/nord.nvim',
 	'https://github.com/David-Kunz/gen.nvim',                                   --TODO setup
