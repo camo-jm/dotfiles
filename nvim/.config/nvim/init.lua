@@ -22,13 +22,13 @@ MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline',
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
 vim.g.mapleader = ' '
-vim.keymap.set('n',	'<leader>f',	':lua MiniFiles.open()<CR>',						{desc = 'file tree'})
-vim.keymap.set('n',	'<leader>t',	':80vsplit | te<CR>',								{desc = 'terminal'})
-vim.keymap.set('n',	'<leader>b',	':lua require("mini.git").show_at_cursor()<CR>',	{desc = 'git history @line'})
-vim.keymap.set('n',	'<leader>l',	':TodoTxt<CR>',										{desc = 'todo file'})
-vim.keymap.set('n',	'<leader>a',	':TodoTxt new<CR>',									{desc = 'add task'})
-vim.keymap.set('n',	'<leader>d',	'<cmd>Duck<CR>',									{desc = 'the duck.'})
-vim.keymap.set('n',	'<leader>g',	'<cmd>echo("wip: AI stuff")<CR>',					{desc = 'WIP: AI stuff'})
+vim.keymap.set('n',	'<leader>f',	':lua MiniFiles.open()<CR>',								{desc = 'file tree'})
+vim.keymap.set('n',	'<leader>t',	':80vsplit | te<CR>',										{desc = 'terminal'})
+vim.keymap.set('n',	'<leader>b',	':lua require("mini.git").show_at_cursor()<CR>',			{desc = 'git history @line'})
+vim.keymap.set('n',	'<leader>l',	':TodoTxt<CR>',												{desc = 'todo file'})
+vim.keymap.set('n',	'<leader>a',	':TodoTxt new<CR>',											{desc = 'add task'})
+vim.keymap.set('n',	'<leader>d',	'<cmd>echo("(- > -) <(explain it, i\'m all ears)")<CR>',	{desc = 'the duck.'})
+vim.keymap.set('n',	'<leader>g',	'<cmd>echo("wip: AI stuff")<CR>',							{desc = 'WIP: AI stuff'})
 
 --------------------------------------------------------------------------------
 -- here starts the "backend" so to speak ---------------------------------------
