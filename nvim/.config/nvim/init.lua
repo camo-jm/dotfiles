@@ -15,22 +15,25 @@ vim.pack.add({
     -- 'https://github.com/RRethy/base16-nvim',                                 --NOTE looks like shit with nord bc ,.;:
 })
 
-TREESITTER = { 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt' }
-MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter', 'operators', 'clue'} --clue
--- TODO: MAYBE: reformat this, define a dict for each file type with all things needed
+vim.cmd('colorscheme nord')
+
+TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt'}
+MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter', 'operators', 'clue'}
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
 -- commands
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>f', ':lua MiniFiles.open()<CR>', {desc = 'file tree'})
-vim.keymap.set('n', '<leader>t', ':80vsplit | te<CR>', {desc = 'terminal'})
-vim.keymap.set('n', '<leader>b', ':lua require("mini.git").show_at_cursor()<CR>', {desc = 'git history @line'})
-vim.keymap.set('n', '<leader>l', ':TodoTxt<CR>', {desc = 'todo file'})
-vim.keymap.set('n', '<leader>a', ':TodoTxt new<CR>', {desc = 'add task'})
-vim.keymap.set('n', '<leader>d', '<cmd>Duck<CR>', {desc = 'the duck.'})
--- TODO: '<leader>i', instruct llm, shows in 80vsp|te<CR>, can save it, etc
+vim.keymap.set('n', '<leader>f',    ':lua MiniFiles.open()<CR>',                        {desc = 'file tree'})
+vim.keymap.set('n', '<leader>t',    ':80vsplit | te<CR>',                               {desc = 'terminal'})
+vim.keymap.set('n', '<leader>b',    ':lua require("mini.git").show_at_cursor()<CR>',    {desc = 'git history @line'})
+vim.keymap.set('n', '<leader>l',    ':TodoTxt<CR>',                                     {desc = 'todo file'})
+vim.keymap.set('n', '<leader>a',    ':TodoTxt new<CR>',                                 {desc = 'add task'})
+vim.keymap.set('n', '<leader>d',    '<cmd>Duck<CR>',                                    {desc = 'the duck.'})
+vim.keymap.set('n', '<leader>g',    '<cmd>echo("wip: AI stuff")<CR>',                   {desc = 'WIP: AI stuff'})
 
-vim.cmd('colorscheme nord')
+--------------------------------------------------------------------------------
+-- here starts the "backend" so to speak ---------------------------------------
+--------------------------------------------------------------------------------
 
 -- mini.nvim config
 for _, m in ipairs(MINIS) do
@@ -109,3 +112,6 @@ vim.lsp.config('lua_ls', {
 
 -- matugen
 -- require('matugen').setup()
+
+local ok, matugen = pcall(require, 'matugen')
+if ok then matugen.setup() end
