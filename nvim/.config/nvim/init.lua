@@ -1,18 +1,18 @@
-vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb et list cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
+vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list sts cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
 vim.cmd('filetype plugin indent on')
 vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
 
 vim.pack.add({
-    'https://github.com/nvim-mini/mini.nvim',
-    'https://github.com/neovim/nvim-lspconfig',
-    'https://github.com/mason-org/mason.nvim',
-    'https://github.com/mason-org/mason-lspconfig.nvim',
-    'https://github.com/phrmendes/todotxt.nvim',
-    'https://github.com/bkp5190/rduck.nvim',
-    'https://github.com/nvim-treesitter/nvim-treesitter',
-    'https://github.com/shaunsingh/nord.nvim',
-    'https://github.com/David-Kunz/gen.nvim',                                   --TODO setup
-    -- 'https://github.com/RRethy/base16-nvim',                                 --NOTE looks like shit with nord bc ,.;:
+	'https://github.com/nvim-mini/mini.nvim',
+	'https://github.com/neovim/nvim-lspconfig',
+	'https://github.com/mason-org/mason.nvim',
+	'https://github.com/mason-org/mason-lspconfig.nvim',
+	'https://github.com/phrmendes/todotxt.nvim',
+	'https://github.com/bkp5190/rduck.nvim',
+	'https://github.com/nvim-treesitter/nvim-treesitter',
+	'https://github.com/shaunsingh/nord.nvim',
+	'https://github.com/David-Kunz/gen.nvim',                                   --TODO setup
+	-- 'https://github.com/RRethy/base16-nvim',                                 --NOTE looks like shit with nord bc ,.;:
 })
 
 vim.cmd('colorscheme nord')
@@ -21,15 +21,14 @@ TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 't
 MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter', 'operators', 'clue'}
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
 
--- commands
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>f',    ':lua MiniFiles.open()<CR>',                        {desc = 'file tree'})
-vim.keymap.set('n', '<leader>t',    ':80vsplit | te<CR>',                               {desc = 'terminal'})
-vim.keymap.set('n', '<leader>b',    ':lua require("mini.git").show_at_cursor()<CR>',    {desc = 'git history @line'})
-vim.keymap.set('n', '<leader>l',    ':TodoTxt<CR>',                                     {desc = 'todo file'})
-vim.keymap.set('n', '<leader>a',    ':TodoTxt new<CR>',                                 {desc = 'add task'})
-vim.keymap.set('n', '<leader>d',    '<cmd>Duck<CR>',                                    {desc = 'the duck.'})
-vim.keymap.set('n', '<leader>g',    '<cmd>echo("wip: AI stuff")<CR>',                   {desc = 'WIP: AI stuff'})
+vim.keymap.set('n',	'<leader>f',	':lua MiniFiles.open()<CR>',						{desc = 'file tree'})
+vim.keymap.set('n',	'<leader>t',	':80vsplit | te<CR>',								{desc = 'terminal'})
+vim.keymap.set('n',	'<leader>b',	':lua require("mini.git").show_at_cursor()<CR>',	{desc = 'git history @line'})
+vim.keymap.set('n',	'<leader>l',	':TodoTxt<CR>',										{desc = 'todo file'})
+vim.keymap.set('n',	'<leader>a',	':TodoTxt new<CR>',									{desc = 'add task'})
+vim.keymap.set('n',	'<leader>d',	'<cmd>Duck<CR>',									{desc = 'the duck.'})
+vim.keymap.set('n',	'<leader>g',	'<cmd>echo("wip: AI stuff")<CR>',					{desc = 'WIP: AI stuff'})
 
 --------------------------------------------------------------------------------
 -- here starts the "backend" so to speak ---------------------------------------
