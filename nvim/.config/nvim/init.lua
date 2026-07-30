@@ -1,5 +1,5 @@
 -- try doing gS in normal mode, inside the brackets (you need mini.splitjoin)
-PLUGINS = {'https://github.com/nvim-mini/mini.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/mason-org/mason.nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/shaunsingh/nord.nvim', 'https://github.com/David-Kunz/gen.nvim',}
+vim.pack.add({'https://github.com/nvim-mini/mini.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/mason-org/mason.nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/shaunsingh/nord.nvim', 'https://github.com/David-Kunz/gen.nvim',})
 MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter', 'operators', 'clue', 'splitjoin'} --base16 maybe?
 TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt'}
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright'}
@@ -11,13 +11,12 @@ vim.keymap.set('n',	'<leader>b',	':lua require("mini.git").show_at_cursor()<CR>'
 vim.keymap.set('n',	'<leader>l',	':TodoTxt<CR>',												{desc = 'todo file'})
 vim.keymap.set('n',	'<leader>a',	':TodoTxt new<CR>',											{desc = 'add task'})
 vim.keymap.set('n',	'<leader>d',	'<cmd>echo("(- > -) <(explain it, i\'m all ears)")<CR>',	{desc = 'the duck.'})
-vim.keymap.set('n',	'<leader>g',	'<cmd>echo("wip: AI stuff")<CR>',							{desc = 'WIP: AI stuff'})
+vim.keymap.set('v',	'<leader>g',	'<cmd>lua print("wip: AI stuff")<CR>',							{desc = 'WIP: AI stuff'})
 
 vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list sts cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
 vim.cmd('colorscheme nord')
 vim.cmd('filetype plugin indent on')
 vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
-vim.pack.add(PLUGINS)
 
 --------------------------------------------------------------------------------
 -- here starts the "backend" so to speak ---------------------------------------
@@ -34,7 +33,7 @@ end
 local miniclue = require('mini.clue')
 miniclue.setup({
     triggers = {
-        {mode = 'n', keys = '<leader>'},
+        {mode = {'n', 'v'}, keys = '<leader>'},
     }
 })
 
