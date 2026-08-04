@@ -100,7 +100,7 @@ hl.config({
         sensitivity   = 0,
         kb_layout     = "us",
         kb_options    = "ctrl:swapcaps",
-        accel_profile = "adaptive",
+        accel_profile = "flat",-- "adaptive",
         touchpad = {
             natural_scroll = false,
         },
