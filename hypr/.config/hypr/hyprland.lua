@@ -98,7 +98,7 @@ hl.config({
     input = {
         follow_mouse  = 1,
         sensitivity   = 0,
-        kb_layout     = "us",
+        kb_layout     = "us, es", -- es/us
         kb_options    = "ctrl:swapcaps",
         accel_profile = "flat",-- "adaptive",
         touchpad = {
@@ -125,6 +125,8 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(menu))
+
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("hyprctl switchxkblayout current next"))
 
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
