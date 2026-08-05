@@ -1,5 +1,8 @@
 [[ -o interactive ]] || return # If not running interactively, don't do anything
-PROMPT='|%F{blue}%n@%m%f %F{magenta}%?%f %F{green}%~%f %B>_%b '
+
+PROMPT='
+|%F{blue}%n@%m%f %F{magenta}%?%f %F{green}%~%f
+|%B>_%b '
 
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
@@ -27,7 +30,6 @@ compinit # Enable completion system
 
 alias l='eza -l --color=always --group-directories-first --icons'
 alias la='eza -l --color=always --group-directories-first --icons -a'
-#alias lf='yazi'
 alias wget='wget -c'
 alias grep='grep --color=auto'
 alias ..='cd ..'
@@ -39,6 +41,7 @@ alias vi='nvim'
 alias ai='aichat'
 alias pf='pfetch'
 alias todo='todotxt-tui'
+alias irs='irssi'
 
 alias cleanpm='sudo pacman -Rns $(pacman -Qtdq)'
 alias fixpm='sudo rm /var/lib/pacman/db.lck'
