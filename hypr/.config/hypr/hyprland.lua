@@ -99,8 +99,8 @@ hl.config({
         follow_mouse  = 1,
         sensitivity   = 0,
         kb_layout     = "us, es", -- es/us
-        kb_options    = "ctrl:swapcaps",
-        accel_profile = "flat",-- "adaptive",
+		kb_options    = "ctrl:swapcaps",
+        accel_profile = "flat",-- flat or adaptive,
         touchpad = {
             natural_scroll = false,
         },
