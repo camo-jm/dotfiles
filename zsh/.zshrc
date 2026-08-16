@@ -1,7 +1,7 @@
 [[ -o interactive ]] || return # If not running interactively, don't do anything
 
 PROMPT='
-|%F{blue}%n@%m%f %F{magenta}%?%f %F{green}%~%f
+|%F{blue}%n%f@%F{blue}%m%f %F{magenta}%?%f %F{green}%~%f
 |%B>_%b '
 
 setopt APPEND_HISTORY
