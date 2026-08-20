@@ -5,12 +5,14 @@ TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 't
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright', 'expert'}
 
 vim.g.mapleader = ' '
-vim.keymap.set('n',	'<leader>f',	':lua MiniFiles.open()<CR>',								{desc = 'file tree'})
-vim.keymap.set('n',	'<leader>t',	':80vsplit | te<CR>',										{desc = 'terminal'})
-vim.keymap.set('n',	'<leader>b',	':lua require("mini.git").show_at_cursor()<CR>',			{desc = 'git history @line'})
-vim.keymap.set('n',	'<leader>l',	':TodoTxt<CR>',												{desc = 'todo file'})
-vim.keymap.set('n',	'<leader>a',	':TodoTxt new<CR>',											{desc = 'add task'})
-vim.keymap.set('n',	'<leader>d',	'<cmd>echo("(- > -) <(explain it, i\'m all ears)")<CR>',	{desc = 'the duck.'})
+vim.keymap.set('n',	'<leader>f',		':lua MiniFiles.open()<CR>',								{desc = 'file tree'})
+vim.keymap.set('n',	'<leader>t',		':80vsplit | te<CR>',										{desc = 'terminal'})
+vim.keymap.set('n',	'<leader><S-t>',	':te<CR>',													{desc = 'fullscreen terminal'})
+vim.keymap.set('n',	'<leader>b',		':lua require("mini.git").show_at_cursor()<CR>',			{desc = 'git history @line'})
+vim.keymap.set('n',	'<leader>l',		':TodoTxt<CR>',												{desc = 'todo file'})
+vim.keymap.set('n',	'<leader>a',		':TodoTxt new<CR>',											{desc = 'add task'})
+vim.keymap.set('n',	'<leader>d',		'<cmd>echo("(- > -) <(explain it, i\'m all ears)")<CR>',	{desc = 'the duck.'})
+-- keymap to toggle auto suggestions
 
 vim.keymap.set('v', '<leader>g', function()
   vim.cmd('80vsp | te')
@@ -105,3 +107,6 @@ vim.lsp.config('lua_ls', {
 			diagnostics = {globals = { 'vim' },},
 			workspace = { library = { '${3rd}/love2d/library'},},
 },},})
+
+local ok, matugen = pcall(require, 'matugen')
+if ok then matugen.setup() end
