@@ -14,10 +14,10 @@ vim.keymap.set('n',	'<leader>a',		':TodoTxt new<CR>',											{desc = 'add tas
 vim.keymap.set('n',	'<leader>d',		'<cmd>echo("(- > -) <(explain it, i\'m all ears)")<CR>',	{desc = 'the duck.'})
 
 vim.keymap.set('v', '<leader>g', function()
-  vim.cmd('80vsp | te')
-  local buf = vim.api.nvim_get_current_buf()
-  local chan = vim.b[buf].terminal_job_id
-  vim.api.nvim_chan_send(chan, "echo 'beep boop'\n")
+	vim.cmd('80vsp | te')
+	local buf = vim.api.nvim_get_current_buf()
+	local chan = vim.b[buf].terminal_job_id
+	vim.api.nvim_chan_send(chan, "echo 'beep boop'\n")
 end, { desc = 'WIP: AI stuff' })
 
 vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list sts=4 cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
@@ -39,27 +39,27 @@ end
 
 local miniclue = require('mini.clue')
 miniclue.setup({
-    triggers = {
-        {mode = {'n', 'v'}, keys = '<leader>'},
-    }
+	triggers = {
+		{mode = {'n', 'v'}, keys = '<leader>'},
+	}
 })
 
 local snippets = require('mini.snippets')
 snippets.setup({
-  snippets = {
-    require("mini.snippets").gen_loader.from_lang(),
-  },
+	snippets = {
+		require("mini.snippets").gen_loader.from_lang(),
+	},
 })
 
 local hipatterns = require('mini.hipatterns')
 hipatterns.setup({
-  highlighters = {
-    fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
-    hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
-    todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
-    note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
-    hex_color = hipatterns.gen_highlighter.hex_color(),
-  },})
+	highlighters = {
+		fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+		hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
+		todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
+		note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
+		hex_color = hipatterns.gen_highlighter.hex_color(),
+	},})
 
 -- todotxt.nvim setup
 vim.filetype.add({
