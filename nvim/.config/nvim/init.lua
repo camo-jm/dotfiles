@@ -1,8 +1,8 @@
 -- try doing gS in normal mode, inside the brackets (you need mini.splitjoin)
-vim.pack.add({'https://github.com/nvim-mini/mini.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/mason-org/mason.nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/shaunsingh/nord.nvim', 'https://github.com/David-Kunz/gen.nvim', 'https://github.com/catppuccin/nvim',})
-MINIS = {'files', 'move', 'pairs', 'surround', 'icons', 'statusline', 'tabline', 'bracketed', 'git', 'diff', 'hipatterns', 'cursorword', 'starter', 'operators', 'clue', 'splitjoin'} --base16 maybe?
+vim.pack.add({'https://github.com/David-Kunz/gen.nvim', 'https://github.com/catppuccin/nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/shaunsingh/nord.nvim',})
+MINIS = {'bracketed', 'clue', 'completion', 'cursorword', 'diff', 'files', 'git', 'hipatterns', 'icons', 'move', 'operators', 'pairs', 'snippets', 'splitjoin', 'starter', 'statusline', 'surround', 'tabline',} --base16 maybe?
 TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt'}
-LSP = {'zls', 'lua_ls', 'clangd', 'pyright', 'expert'}
+LSP = {'zls', 'lua_ls', 'clangd', 'pyright', 'expert', 'jdtls',}
 
 vim.g.mapleader = ' '
 vim.keymap.set('n',	'<leader>f',		':lua MiniFiles.open()<CR>',								{desc = 'file tree'})
@@ -12,7 +12,6 @@ vim.keymap.set('n',	'<leader>b',		':lua require("mini.git").show_at_cursor()<CR>
 vim.keymap.set('n',	'<leader>l',		':TodoTxt<CR>',												{desc = 'todo file'})
 vim.keymap.set('n',	'<leader>a',		':TodoTxt new<CR>',											{desc = 'add task'})
 vim.keymap.set('n',	'<leader>d',		'<cmd>echo("(- > -) <(explain it, i\'m all ears)")<CR>',	{desc = 'the duck.'})
--- keymap to toggle auto suggestions
 
 vim.keymap.set('v', '<leader>g', function()
   vim.cmd('80vsp | te')
@@ -43,6 +42,13 @@ miniclue.setup({
     triggers = {
         {mode = {'n', 'v'}, keys = '<leader>'},
     }
+})
+
+local snippets = require('mini.snippets')
+snippets.setup({
+  snippets = {
+    require("mini.snippets").gen_loader.from_lang(),
+  },
 })
 
 local hipatterns = require('mini.hipatterns')
