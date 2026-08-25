@@ -1,7 +1,7 @@
 -- try doing gS in normal mode, inside the brackets (you need mini.splitjoin)
 vim.pack.add({'https://github.com/David-Kunz/gen.nvim', 'https://github.com/catppuccin/nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/shaunsingh/nord.nvim',})
 MINIS = {'bracketed', 'clue', 'completion', 'cursorword', 'diff', 'files', 'git', 'hipatterns', 'icons', 'move', 'operators', 'pairs', 'snippets', 'splitjoin', 'starter', 'statusline', 'surround', 'tabline',} --base16 maybe?
-TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt'}
+TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt', 'java'}
 LSP = {'zls', 'lua_ls', 'clangd', 'pyright', 'expert', 'jdtls',}
 
 vim.g.mapleader = ' '
@@ -20,7 +20,7 @@ vim.keymap.set('v', '<leader>g', function()
   vim.api.nvim_chan_send(chan, "echo 'beep boop'\n")
 end, { desc = 'WIP: AI stuff' })
 
-vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list sts cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
+vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list sts=4 cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
 vim.cmd('colorscheme catppuccin')
 vim.cmd('filetype plugin indent on')
 vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
@@ -113,6 +113,3 @@ vim.lsp.config('lua_ls', {
 			diagnostics = {globals = { 'vim' },},
 			workspace = { library = { '${3rd}/love2d/library'},},
 },},})
-
-local ok, matugen = pcall(require, 'matugen')
-if ok then matugen.setup() end
