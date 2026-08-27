@@ -1,8 +1,9 @@
 -- try doing gS in normal mode, inside the brackets (you need mini.splitjoin)
-vim.pack.add({'https://github.com/David-Kunz/gen.nvim', 'https://github.com/catppuccin/nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/shaunsingh/nord.nvim',})
+vim.pack.add({'https://github.com/catppuccin/nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/shaunsingh/nord.nvim', 'https://github.com/daedlock/matugen.nvim', 'https://github.com/RRethy/base16-nvim',})
 MINIS = {'bracketed', 'clue', 'completion', 'cursorword', 'diff', 'files', 'git', 'hipatterns', 'icons', 'move', 'operators', 'pairs', 'snippets', 'splitjoin', 'starter', 'statusline', 'surround', 'tabline',} --base16 maybe?
 TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt', 'java'}
-LSP = {'zls', 'lua_ls', 'clangd', 'pyright', 'expert', 'jdtls',}
+LSP = {'bashls', 'clangd', 'expert', 'jdtls', 'lua_ls', 'pyright', 'zls',}
+COLORSCHEME = "catppuccin"
 
 vim.g.mapleader = ' '
 vim.keymap.set('n',	'<leader>f',		':lua MiniFiles.open()<CR>',								{desc = 'file tree'})
@@ -18,10 +19,9 @@ vim.keymap.set('v', '<leader>g', function()
 	local buf = vim.api.nvim_get_current_buf()
 	local chan = vim.b[buf].terminal_job_id
 	vim.api.nvim_chan_send(chan, "echo 'beep boop'\n")
-end, { desc = 'WIP: AI stuff' })
+end, { desc = 'WIP: AI stuff' }) -- TODO
 
 vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list sts=4 cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
-vim.cmd('colorscheme catppuccin')
 vim.cmd('filetype plugin indent on')
 vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
 
@@ -29,8 +29,9 @@ vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true 
 -- here starts the "backend" so to speak ---------------------------------------
 --------------------------------------------------------------------------------
 
--- TODO: check 'https://github.com/RRethy/base16-nvim' or change it for mini.base16	--NOTE looks like shit with nord bc ,.;:
--- TODO: setup gen.nvim OR remove it
+-- noctalia thingies
+local ok, matugen = pcall(require, 'matugen')
+if ok then matugen.setup() end
 
 -- mini.nvim config
 for _, m in ipairs(MINIS) do
@@ -113,3 +114,5 @@ vim.lsp.config('lua_ls', {
 			diagnostics = {globals = { 'vim' },},
 			workspace = { library = { '${3rd}/love2d/library'},},
 },},})
+
+vim.cmd("colorscheme " .. COLORSCHEME)
