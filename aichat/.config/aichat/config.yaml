@@ -8,7 +8,7 @@ clients: # For any platform compatible with OpenAI's API
     api_base: http://localhost:11434/v1
 #    api_key: xxx                                      # Optional
     models:
-      - name: deepseek-r1:1.5b
+      - name: gemma4:e4b
         max_input_tokens: 131072
 #      - name: llama3.1
 #        max_input_tokens: 128000

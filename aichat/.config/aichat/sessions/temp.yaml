@@ -1,0 +1,109 @@
+model: ollama:gemma4:e4b
+role_name: assistant
+messages:
+- role: system
+  content: |-
+    You are a helpful, accurate, and thoughtful AI assistant.
+
+    Your goals are to:
+    - Understand the user’s intent before answering.
+    - Provide clear, practical, and actionable responses.
+    - Be concise for simple questions and thorough for complex ones.
+    - Explain reasoning when it helps the user understand or act.
+    - Adapt your tone and level of detail to the user’s needs.
+    - State uncertainty honestly instead of inventing facts.
+    - Ask a clarifying question only when it is necessary; otherwise, make a reasonable assumption and proceed.
+    - Break complicated tasks into manageable steps.
+    - Use examples when they improve clarity.
+    - Preserve important context from the conversation.
+    - Correct mistakes clearly and respectfully.
+
+    Response guidelines:
+    - Lead with the answer.
+    - Do not unnecessarily repeat the user’s question.
+    - Avoid vague filler, excessive disclaimers, and needless jargon.
+    - Use plain language unless the user requests technical detail.
+    - Prefer specific recommendations, examples, and next steps.
+    - Use Markdown lists, tables, or headings only when they improve readability.
+    - For code, provide complete, runnable examples when possible and put them in fenced code blocks.
+    - For calculations, show the relevant math.
+    - For comparisons, explain the important trade-offs.
+    - For sensitive topics, respond with empathy and avoid judgment.
+    - Do not claim to have performed actions, accessed information, or used tools unless you actually did so.
+    - Do not fabricate sources, quotations, statistics, or citations.
+    - Respect the user’s instructions unless they conflict with safety or higher-priority rules.
+
+    When a request is ambiguous:
+    1. Infer the most reasonable interpretation.
+    2. State the assumption briefly if it matters.
+    3. Give a useful answer rather than stopping unnecessarily.
+
+    When information may be outdated:
+    - Say that it may have changed.
+    - Use available tools or current sources when appropriate.
+    - Include relevant dates.
+
+    Your purpose is to help the user make progress, not merely to produce an answer.
+- role: user
+  content: help me make my schedule
+- role: assistant
+  content: |-
+    <think>
+    Here's a thinking process to construct the initial response:
+
+    1.  **Analyze the Request:** The user simply stated, "help me make my schedule."
+    2.  **Determine User Intent:** The intent is clear—the user needs organizational assistance. However, the request is extremely vague. A schedule depends entirely on the user's goals, constraints, current commitments, and priorities.
+    3.  **Identify the Core Problem:** I cannot create a schedule without information. I need to gather necessary context.
+    4.  **Formulate a Strategy (Structuring the Help):** Since I can't provide the answer immediately, I must guide the user through a framework for scheduling. This makes the interaction helpful, actionable, and structured.
+    5.  **Identify Required Information Categories (The "Deep Dive" Questions):** To make a good schedule, I need to know:
+        *   *What* needs to be scheduled (tasks, goals, classes, work?).
+        *   *When* the schedule needs to run (Time frame: daily, weekly, monthly?).
+        *   *How much time* is available (Existing commitments, energy levels).
+        *   *The Goal* (The *why* of the schedule: is it for balance, productivity, fitness, etc.?).
+    6.  **Draft the Response Tone:** Must be helpful, empathetic, and encouraging, establishing the role of a collaboration partner rather than an authority.
+    7.  **Structure the Response (Drafting the output):**
+        *   **Acknowledge/Lead:** Start by stating that I need input to make it effective.
+        *   **Simplify the Process:** Break the task into manageable steps (the framework). This is the "how-to" guide.
+        *   **Ask Key Questions:** List the necessary context points (using Markdown/bullet points for readability).
+        *   **Offer Next Steps:** Reiterate that once they provide the details, I can build the schedule. (This creates a clear path forward.)
+
+    **(Self-Correction/Refinement during drafting):** I must avoid just listing generic time-management tips. The focus should be on *gathering data* so I can *build* the schedule for them. The questions must be the priority.
+
+    8.  **Final Review:** (Check against guidelines: Clear? Practical? Actionable? Structured?) Yes. The structure hits all necessary components. (Proceed with generation.)
+    </think>
+
+    To help you make a schedule that actually works for you, I need a little more information about what you want to fit into it and what your goals are!
+
+    Scheduling is highly personal, so instead of giving you a blank template, let's work through a few steps together. By answering these questions, we can build a clear, realistic plan.
+
+    ### 📚 Step 1: Defining the Scope (What are we scheduling?)
+
+    Please tell me about the time frame and the things that need to happen. You can list these out in simple bullet points.
+
+    *   **Timeframe:** Is this schedule for a single **day**, a full **week**, or a general **routine**?
+    *   **Fixed Obligations:** What things *must* happen at specific times? (Examples: Work hours, classes, dropping off kids, therapy appointments.)
+    *   **Flexible Tasks:** What are the things you *want* to fit in, but that don't have a fixed time? (Examples: Studying for an exam, working out, chores, reading, deep cleaning.)
+
+    ### 🎯 Step 2: Defining the Goal (What is the schedule *for*?)
+
+    A schedule without a purpose often fails. Knowing your focus helps us prioritize.
+
+    *   **Primary Goal:** Are you trying to be more productive, more restful, healthier, or are you trying to balance multiple demanding areas (work/life/school)?
+    *   **Energy Management:** Do you have times of day when you feel most energized ("Peak Hours") or when you feel sluggish? (Knowing your energy cycles helps place the hardest tasks during your best times.)
+
+    ### 🌿 Step 3: Time Constraints (How does it *feel* right?)
+
+    A great schedule is sustainable, not overwhelming.
+
+    *   **Sleep:** What is your ideal amount of sleep, and what are your non-negotiable wake-up and bedtime times?
+    *   **Breaks:** How much break time do you realistically need to feel refreshed? (Do you schedule short 15-minute breaks every 2 hours, or are big blocks of free time better?)
+
+    ***
+
+    ### ➡️ Once I have these details, I can help you by:
+
+    1.  **Creating a Visual Layout:** I will organize your commitments into a structured, actionable timeline (e.g., a daily or weekly table).
+    2.  **Identifying Conflicts:** I will point out potential areas where tasks might overlap or where your current commitments are too heavy.
+    3.  **Prioritizing:** We can apply productivity methods (like the Eisenhower Matrix or Time Blocking) to make sure the most important tasks get scheduled first.
+
+    **Ready when you are! Just give me as much detail as you can, and we will build a manageable schedule together.**

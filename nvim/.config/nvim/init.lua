@@ -1,6 +1,6 @@
 -- try doing gS in normal mode, inside the brackets (you need mini.splitjoin)
-vim.pack.add({'https://github.com/catppuccin/nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/shaunsingh/nord.nvim', 'https://github.com/daedlock/matugen.nvim', 'https://github.com/RRethy/base16-nvim',})
-MINIS = {'bracketed', 'clue', 'completion', 'cursorword', 'diff', 'files', 'git', 'hipatterns', 'icons', 'move', 'operators', 'pairs', 'snippets', 'splitjoin', 'starter', 'statusline', 'surround', 'tabline',} --base16 maybe?
+vim.pack.add({'https://github.com/catppuccin/nvim', 'https://github.com/David-Kunz/gen.nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/shaunsingh/nord.nvim', 'https://github.com/daedlock/matugen.nvim', 'https://github.com/RRethy/base16-nvim',})
+MINIS = {'snippets', 'bracketed', 'clue', 'completion', 'cursorword', 'diff', 'files', 'git', 'hipatterns', 'icons', 'move', 'operators', 'pairs', 'splitjoin', 'starter', 'statusline', 'surround', 'tabline',} --base16, snippets maybe?
 TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt', 'java'}
 LSP = {'bashls', 'clangd', 'expert', 'jdtls', 'lua_ls', 'pyright', 'zls',}
 COLORSCHEME = "catppuccin"
@@ -13,13 +13,7 @@ vim.keymap.set('n',	'<leader>b',		':lua require("mini.git").show_at_cursor()<CR>
 vim.keymap.set('n',	'<leader>l',		':TodoTxt<CR>',												{desc = 'todo file'})
 vim.keymap.set('n',	'<leader>a',		':TodoTxt new<CR>',											{desc = 'add task'})
 vim.keymap.set('n',	'<leader>d',		'<cmd>echo("(- > -) <(explain it, i\'m all ears)")<CR>',	{desc = 'the duck.'})
-
-vim.keymap.set('v', '<leader>g', function()
-	vim.cmd('80vsp | te')
-	local buf = vim.api.nvim_get_current_buf()
-	local chan = vim.b[buf].terminal_job_id
-	vim.api.nvim_chan_send(chan, "echo 'beep boop'\n")
-end, { desc = 'WIP: AI stuff' }) -- TODO
+vim.keymap.set('v', '<leader>g',		"<cmd>'<,'>Gen<CR>",{desc = 'ask an LLM'})
 
 vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list sts=4 cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
 vim.cmd('filetype plugin indent on')
@@ -45,12 +39,17 @@ miniclue.setup({
 	}
 })
 
-local snippets = require('mini.snippets')
-snippets.setup({
-	snippets = {
-		require("mini.snippets").gen_loader.from_lang(),
-	},
+pcall(vim.keymap.del, "i", "<C-j>") --NOTE unfortunately this has to be done since the plugin is required twice (i'm gonna fix it later)
+
+require("mini.snippets").setup({
+  mappings = {
+    expand = "<C-e>",
+    jump_next = "<C-b>",
+    jump_prev = "",
+    stop = "",
+  },
 })
+
 
 local hipatterns = require('mini.hipatterns')
 hipatterns.setup({
@@ -114,5 +113,16 @@ vim.lsp.config('lua_ls', {
 			diagnostics = {globals = { 'vim' },},
 			workspace = { library = { '${3rd}/love2d/library'},},
 },},})
+
+-- gen.nvim setup
+require('gen').setup({
+	model = 'deepseek-coder:1.3b',
+	host = 'localhost',
+	port = '11434',
+	show_prompt = 'true',
+	show_model = 'true',
+	display_mode = 'vertical-split',
+
+})
 
 vim.cmd("colorscheme " .. COLORSCHEME)
