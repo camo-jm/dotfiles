@@ -65,8 +65,8 @@ hipatterns.setup({
 vim.filetype.add({
     filename = {["todo.txt"] = "todotxt", ["done.txt"] = "todotxt"},})
 require("todotxt").setup({
-    todotxt = vim.env.HOME .. "/Documents/todo.txt",
-    donetxt = vim.env.HOME .. "/Documents/done.txt",
+    todotxt = vim.env.HOME .. "/Media/Documents/todo.txt",
+    donetxt = vim.env.HOME .. "/Media/Documents/done.txt",
     prefix = " ",
     highlight = "Comment",
 })
@@ -125,4 +125,4 @@ require('gen').setup({
 
 })
 
-vim.cmd("colorscheme " .. COLORSCHEME)
+--vim.cmd("colorscheme " .. COLORSCHEME)
