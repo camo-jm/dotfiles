@@ -1,0 +1,10 @@
+2026-09-24T11:54:49.915813190-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(LightRed)), fg: None, modifier: None }
+2026-09-24T11:54:49.916219462-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(LightRed)), fg: None, modifier: None }
+2026-09-24T11:54:49.916447606-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/todo.txt", archive: None
+2026-09-24T11:58:49.605343417-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(LightRed)), fg: None, modifier: None }
+2026-09-24T11:58:49.605479205-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(LightRed)), fg: None, modifier: None }
+2026-09-24T11:58:49.605501766-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/Media/todo.txt", archive: None
+2026-09-24T12:02:12.836320634-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(LightRed)), fg: None, modifier: None }
+2026-09-24T12:02:12.836445172-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(LightRed)), fg: None, modifier: None }
+2026-09-24T12:02:12.836620279-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/Media/Documents/todo.txt", archive: None
+2026-09-24T12:02:12.848200598-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
