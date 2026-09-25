@@ -77,7 +77,7 @@ k = "ListUp"
 j = "ListDown"
 
 [list_active_color]
-bg = "LightRed"
+bg = "DarkGray"
 
 [pending_active_color]
 
