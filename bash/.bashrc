@@ -8,8 +8,17 @@ alias l='eza -l --color=always --group-directories-first --icons'
 alias la='eza -l --color=always --group-directories-first --icons -a'
 alias vi='nvim'
 alias wget='wget -c'
+alias fetch='fastfetch --file-raw ~/dotfiles/fastfetch/.config/fastfetch/lucario'
 
-function lf() {
+function cc() {
+	local file=$1
+	shift
+	local -a flags=(-Wall -Wextra -Wpedantic -Werror -std=c89)
+	command cc "$file" "${flags[@]}" "$@"
+}
+
+function lf()
+{
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then

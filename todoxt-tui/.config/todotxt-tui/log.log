@@ -29,3 +29,8 @@
 2026-09-25T15:43:20.404882321-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
 2026-09-25T15:43:20.404930277-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/Media/Documents/todo.txt", archive: None
 2026-09-25T15:43:20.411466682-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-03T22:39:12.693366873-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-03T22:39:12.693964410-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-03T22:39:12.694071053-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/Media/Documents/todo.txt", archive: None
+2026-10-03T22:39:12.699718951-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-03T22:39:19.095222236-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt

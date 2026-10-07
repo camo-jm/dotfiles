@@ -1,6 +1,6 @@
 -- try doing gS in normal mode, inside the brackets (you need mini.splitjoin)
 vim.pack.add({'https://github.com/catppuccin/nvim', 'https://github.com/David-Kunz/gen.nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/shaunsingh/nord.nvim', 'https://github.com/daedlock/matugen.nvim', 'https://github.com/RRethy/base16-nvim',})
-MINIS = {'snippets', 'bracketed', 'clue', 'completion', 'cursorword', 'diff', 'files', 'git', 'hipatterns', 'icons', 'move', 'operators', 'pairs', 'splitjoin', 'starter', 'statusline', 'surround', 'tabline',} --base16, snippets maybe?
+MINIS = {'snippets', 'bracketed', 'clue', 'completion', 'cursorword', 'diff', 'files', 'git', 'hipatterns', 'icons', 'move', 'operators', 'pairs', 'splitjoin', 'starter', 'statusline', 'surround', 'tabline',} --base16?
 TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt', 'java'}
 LSP = {'bashls', 'clangd', 'expert', 'jdtls', 'lua_ls', 'pyright', 'zls',}
 COLORSCHEME = "catppuccin"
@@ -15,7 +15,7 @@ vim.keymap.set('n',	'<leader>a',		':TodoTxt new<CR>',											{desc = 'add tas
 vim.keymap.set('n',	'<leader>d',		'<cmd>echo("(- > -) <(explain it, i\'m all ears)")<CR>',	{desc = 'the duck.'})
 vim.keymap.set('v', '<leader>g',		"<cmd>'<,'>Gen<CR>",{desc = 'ask an LLM'})
 
-vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list sts=4 cc=80 ts=4 sw=4 so=10 siso=10 path+=** icm=split')
+vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list et sts=4 cc=80 ts=4 sw=2 so=10 siso=10 path+=** icm=split')
 vim.cmd('filetype plugin indent on')
 vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true })
 
@@ -41,13 +41,17 @@ miniclue.setup({
 
 pcall(vim.keymap.del, "i", "<C-j>") --NOTE unfortunately this has to be done since the plugin is required twice (i'm gonna fix it later)
 
+local gen_loader = require('mini.snippets').gen_loader
 require("mini.snippets").setup({
-  mappings = {
-    expand = "<C-e>",
-    jump_next = "<C-b>",
-    jump_prev = "",
-    stop = "",
-  },
+	snippets = {
+		gen_loader.from_file('~/.config/nvim/snippets/global.json')
+	},
+	mappings = {
+		expand = "<C-e>",
+		jump_next = "<C-b>",
+		jump_prev = "",
+		stop = "",
+	},
 })
 
 
