@@ -4,3 +4,5 @@ newsboat/.newsboat/history.search
 newsboat/.newsboat/history.cmdline
 
 nvim/.config/nvim/nvim-pack-lock.json
+
+todotxt/.config/todoxt-tui/.config/todotxt-tui/log.log

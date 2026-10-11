@@ -1,6 +1,25 @@
 -- try doing gS in normal mode, inside the brackets (you need mini.splitjoin)
 vim.pack.add({'https://github.com/catppuccin/nvim', 'https://github.com/David-Kunz/gen.nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/shaunsingh/nord.nvim', 'https://github.com/daedlock/matugen.nvim', 'https://github.com/RRethy/base16-nvim',})
-MINIS = {'snippets', 'bracketed', 'clue', 'completion', 'cursorword', 'diff', 'files', 'git', 'hipatterns', 'icons', 'move', 'operators', 'pairs', 'splitjoin', 'starter', 'statusline', 'surround', 'tabline',} --base16?
+MINIS = {
+  'snippets',
+  'bracketed',
+  'clue',
+  'completion',
+  'cursorword',
+  'diff',
+  'files',
+  'git',
+  'hipatterns',
+  'icons',
+  'move',
+  'operators',
+  'pairs',
+  'splitjoin',
+  -- 'starter',
+  -- 'statusline',
+  'surround',
+  -- 'tabline',
+} --base16?
 TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt', 'java'}
 LSP = {'bashls', 'clangd', 'expert', 'jdtls', 'lua_ls', 'pyright', 'zls',}
 COLORSCHEME = "catppuccin"

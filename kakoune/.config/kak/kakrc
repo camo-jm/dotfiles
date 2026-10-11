@@ -1,0 +1,20 @@
+#clippy
+set-option global ui_options ncurses_assistant=on
+
+colorscheme catppuccin_mocha
+
+hook global BufCreate .* %[
+  add-highlighter buffer/ number-lines -hlcursor
+]
+
+set-option global scrolloff 10,10
+
+# case insensitive search
+map global prompt <a-i> "<home>(?i)<end>"
+
+# tab size + tabs -> spaces
+set-option global tabstop 2
+set-option global indentwidth 2
+hook global InsertChar \t %{
+    exec -draft h@
+}
