@@ -1,38 +1,16 @@
 -- try doing gS in normal mode, inside the brackets (you need mini.splitjoin)
-vim.pack.add({'https://github.com/catppuccin/nvim', 'https://github.com/David-Kunz/gen.nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/phrmendes/todotxt.nvim', 'https://github.com/shaunsingh/nord.nvim', 'https://github.com/daedlock/matugen.nvim', 'https://github.com/RRethy/base16-nvim',})
-MINIS = {
-  'snippets',
-  'bracketed',
-  'clue',
-  'completion',
-  'cursorword',
-  'diff',
-  'files',
-  'git',
-  'hipatterns',
-  'icons',
-  'move',
-  'operators',
-  'pairs',
-  'splitjoin',
-  -- 'starter',
-  -- 'statusline',
-  'surround',
-  -- 'tabline',
-} --base16?
+vim.pack.add({'https://github.com/catppuccin/nvim', 'https://github.com/David-Kunz/gen.nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/daedlock/matugen.nvim', 'https://github.com/RRethy/base16-nvim',}) --check: catppuccin, gen.nvim
+
+MINIS = {'snippets', 'bracketed', 'clue', 'completion', 'cursorword', 'diff', 'files', 'git', 'hipatterns', 'icons', 'move', 'pairs', 'splitjoin', 'surround', 'tabline',} --check: bracketed, cursorword, git, icons, pairs, splitjoin, surround
 TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt', 'java'}
 LSP = {'bashls', 'clangd', 'expert', 'jdtls', 'lua_ls', 'pyright', 'zls',}
-COLORSCHEME = "catppuccin"
-
+--COLORSCHEME = "catppuccin"
 vim.g.mapleader = ' '
-vim.keymap.set('n',	'<leader>f',		':lua MiniFiles.open()<CR>',								{desc = 'file tree'})
-vim.keymap.set('n',	'<leader>t',		':80vsplit | te<CR>',										{desc = 'terminal'})
-vim.keymap.set('n',	'<leader><S-t>',	':te<CR>',													{desc = 'fullscreen terminal'})
-vim.keymap.set('n',	'<leader>b',		':lua require("mini.git").show_at_cursor()<CR>',			{desc = 'git history @line'})
-vim.keymap.set('n',	'<leader>l',		':TodoTxt<CR>',												{desc = 'todo file'})
-vim.keymap.set('n',	'<leader>a',		':TodoTxt new<CR>',											{desc = 'add task'})
-vim.keymap.set('n',	'<leader>d',		'<cmd>echo("(- > -) <(explain it, i\'m all ears)")<CR>',	{desc = 'the duck.'})
-vim.keymap.set('v', '<leader>g',		"<cmd>'<,'>Gen<CR>",{desc = 'ask an LLM'})
+
+vim.keymap.set('n', '<leader>f',        ':lua MiniFiles.open()<CR>',                                {desc = 'file tree'})
+vim.keymap.set('n', '<leader>t',        ':80vsplit | te<CR>',                                       {desc = 'terminal'})
+vim.keymap.set('n', '<leader>b',        ':lua require("mini.git").show_at_cursor()<CR>',            {desc = 'git history @line'}) --TODO checkme
+vim.keymap.set('v', '<leader>g',        "<cmd>'<,'>Gen<CR>",                                        {desc = 'ask an LLM'})
 
 vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list et sts=4 cc=80 ts=4 sw=2 so=10 siso=10 path+=** icm=split')
 vim.cmd('filetype plugin indent on')
@@ -73,7 +51,6 @@ require("mini.snippets").setup({
 	},
 })
 
-
 local hipatterns = require('mini.hipatterns')
 hipatterns.setup({
 	highlighters = {
@@ -83,16 +60,6 @@ hipatterns.setup({
 		note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
 		hex_color = hipatterns.gen_highlighter.hex_color(),
 	},})
-
--- todotxt.nvim setup
-vim.filetype.add({
-    filename = {["todo.txt"] = "todotxt", ["done.txt"] = "todotxt"},})
-require("todotxt").setup({
-    todotxt = vim.env.HOME .. "/Media/Documents/todo.txt",
-    donetxt = vim.env.HOME .. "/Media/Documents/done.txt",
-    prefix = " ",
-    highlight = "Comment",
-})
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "todotxt",
@@ -126,7 +93,7 @@ vim.api.nvim_create_autocmd('FileType', {
 require('mason').setup()
 require('mason-lspconfig').setup({ ensure_installed = LSP, })
 
-for _, server in ipairs(LSP) do vim.lsp.enable(server) end
+for _, server in ipairs(LSP) do vim.lsp.enable(server) end --TODO make this only load necessary LSPs
 
 vim.lsp.config('lua_ls', {
 	filetypes = { 'lua' },
@@ -139,7 +106,7 @@ vim.lsp.config('lua_ls', {
 
 -- gen.nvim setup
 require('gen').setup({
-	model = 'deepseek-coder:1.3b',
+	model = 'gemma4:e2b',
 	host = 'localhost',
 	port = '11434',
 	show_prompt = 'true',
@@ -148,4 +115,4 @@ require('gen').setup({
 
 })
 
---vim.cmd("colorscheme " .. COLORSCHEME)
+if COLORSCHEME then vim.cmd("colorscheme " .. COLORSCHEME) end

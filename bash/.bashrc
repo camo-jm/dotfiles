@@ -14,7 +14,7 @@ function cc() {
 	local file=$1
 	shift
 	local -a flags=(-Wall -Wextra -Wpedantic -Werror -std=c89)
-	command cc "$file" "${flags[@]}" "$@"
+	command musl-gcc "$file" "${flags[@]}" "$@"
 }
 
 function lf()
