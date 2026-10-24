@@ -6,7 +6,8 @@ hl.monitor({
 })
 
 local mainMod     = "SUPER"
-local terminal    = "foot"
+-- local terminal    = "foot"
+local terminal    = "ghostty" -- "foot"
 local fileManager = "dolphin"
 local menu        = "noctalia msg panel-toggle launcher"
 
@@ -191,3 +192,7 @@ hl.window_rule({
 
 -- For Noctalia Color templates
 require("noctalia").apply_theme()
+
+-- Added by Hyprland Settings (Noctalia plugin): loads the file its panel writes.
+-- Move it up if a later block here must win over the panel.
+require("hyprland-settings")

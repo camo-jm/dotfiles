@@ -72,3 +72,191 @@
 2026-10-15T21:45:34.979842940-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
 2026-10-15T21:45:34.979976074-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
 2026-10-15T21:45:34.979990944-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-16T23:00:11.225431882-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-17T01:41:33.143933833-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-17T01:41:33.144016742-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-17T01:41:33.144031200-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/Media/Documents/todo.txt", archive: None
+2026-10-17T01:41:33.148018688-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-17T04:17:34.838489842-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-18T06:22:21.100685071-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-18T06:22:56.753431653-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-18T06:23:04.784284266-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-18T06:23:27.903393910-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-19T13:52:38.987125015-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-19T13:52:38.987827-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-19T13:52:38.987950001-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/Media/Documents/todo.txt", archive: None
+2026-10-19T13:52:38.993780261-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:42:36.249728692-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-20T18:42:36.249842546-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-20T18:42:36.249869700-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/Media/Documents/todo.txt", archive: None
+2026-10-20T18:42:36.256133983-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:42:58.345535659-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:42:58.347255793-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:42:58.347393910-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:42:58.347409505-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:12.289785612-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:12.320660163-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:12.320751222-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:12.320767156-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:12.890009821-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:12.890925944-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:12.890998345-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:12.891013649-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:12.930281339-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:12.931330383-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:12.931405719-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:12.931420046-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:12.970280376-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:12.971381274-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:12.971488338-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:12.971504412-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:13.009971570-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:13.010957073-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:13.011035978-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:13.011049256-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:13.050217086-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:13.051054215-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:13.051146608-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:13.051164710-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:13.090065634-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:13.091075458-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:13.091162400-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:13.091179593-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:22.705942355-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-20T18:43:22.706056056-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-20T18:43:22.706077510-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/Media/Documents/todo.txt", archive: None
+2026-10-20T18:43:22.713011959-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:29.598980004-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 1.
+2026-10-20T18:43:29.599148626-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:29.600378806-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:29.600486283-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:29.600509763-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:29.814764952-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 1.
+2026-10-20T18:43:29.814893113-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:29.815933498-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:29.816008689-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:29.816021617-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:30.038677295-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 1.
+2026-10-20T18:43:30.038801333-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:30.039875675-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:30.039947512-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:30.039961628-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:30.280605879-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 1.
+2026-10-20T18:43:30.280742845-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:30.285195975-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:30.285279413-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:30.285292410-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:30.517666312-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 1.
+2026-10-20T18:43:30.517811453-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:30.519141278-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:30.519245819-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:30.519258677-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:45.894428649-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:45.895486180-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:45.895577789-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:45.895593163-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-20T18:43:51.730691523-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:51.734995825-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-20T18:43:51.735086945-03:00 [INFO] todotxt_tui::file_worker: Todo list updated from file.
+2026-10-20T18:43:51.735101898-03:00 [INFO] todotxt_tui::file_worker: File Worker: Todo list is actual.
+2026-10-22T05:29:13.661251680-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-22T05:29:13.661912252-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-22T05:29:13.662028865-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/Media/Documents/todo.txt", archive: None
+2026-10-22T05:29:13.669312898-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:29:26.918175640-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 2.
+2026-10-22T05:29:26.918364127-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:29:53.263615351-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:30:49.041048249-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 1.
+2026-10-22T05:30:49.041222733-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:30:49.145865488-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 0.
+2026-10-22T05:30:49.146003665-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:31:08.153504551-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:31:27.307147965-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 1.
+2026-10-22T05:31:27.307272884-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:31:32.674870602-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 0.
+2026-10-22T05:31:32.675012525-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:31:34.571813472-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 7.
+2026-10-22T05:31:34.571973561-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:31:34.686115965-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 7.
+2026-10-22T05:31:34.686199088-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:31:45.163949795-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 8.
+2026-10-22T05:31:45.164095582-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:34:09.982038410-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:34:20.100455380-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 0.
+2026-10-22T05:34:20.100592458-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:35:02.291424339-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 19.
+2026-10-22T05:35:02.291605576-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:35:03.683554478-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 19.
+2026-10-22T05:35:03.683715803-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:35:05.473144619-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 19.
+2026-10-22T05:35:05.473293018-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:35:07.977310130-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 19.
+2026-10-22T05:35:07.977536361-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T05:35:09.256518172-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 19.
+2026-10-22T05:35:09.256697802-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T07:55:11.204050645-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 19.
+2026-10-22T07:55:11.204218469-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T08:33:23.071734566-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 22.
+2026-10-22T08:33:23.075091257-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:19:32.418346948-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 4.
+2026-10-22T10:19:32.418485321-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:31:59.763733083-03:00 [INFO] todotxt_tui::layout::widget::state_list: Remove task with index 33.
+2026-10-22T10:31:59.763878656-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:26.454297851-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:31.803767460-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:32.403980992-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:32.444140233-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:32.484285181-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:32.523985354-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:34.241829844-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:34.842312117-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:34.882253192-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:34.922040831-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:34.962276434-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:36.730129685-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:37.330272075-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:37.370592547-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:37.410525267-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:37.450615306-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:37.490365033-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:37.530213966-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:39.522480960-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:40.122621232-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:40.162925612-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:40.203048777-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:40.242984449-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:40.282773236-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:40.323019910-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:40.520349737-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:40.716104876-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:40.848138937-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:42.563035912-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:42.710415750-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:42.891980767-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:43.011935425-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:46.621598619-03:00 [ERROR] todotxt_tui::layout::widget::widget_list: len: 11, index: 6
+2026-10-22T10:48:46.621776454-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:47.222058088-03:00 [ERROR] todotxt_tui::layout::widget::widget_list: len: 11, index: 7
+2026-10-22T10:48:47.222201587-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:47.262025487-03:00 [ERROR] todotxt_tui::layout::widget::widget_list: len: 11, index: 8
+2026-10-22T10:48:47.262167800-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:47.301834801-03:00 [ERROR] todotxt_tui::layout::widget::widget_list: len: 11, index: 9
+2026-10-22T10:48:47.301982906-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:47.342021358-03:00 [ERROR] todotxt_tui::layout::widget::widget_list: len: 11, index: 10
+2026-10-22T10:48:47.381939622-03:00 [ERROR] todotxt_tui::layout::widget::widget_list: len: 11, index: 10
+2026-10-22T10:48:50.071774699-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:50.417448719-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:51.574734399-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:51.742631998-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:51.881106633-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:53.936957787-03:00 [ERROR] todotxt_tui::layout::widget::widget_list: len: 11, index: 2
+2026-10-22T10:48:53.937114631-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:54.151986371-03:00 [ERROR] todotxt_tui::layout::widget::widget_list: len: 11, index: 3
+2026-10-22T10:48:54.152124230-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T10:48:54.359783329-03:00 [ERROR] todotxt_tui::layout::widget::widget_list: len: 11, index: 4
+2026-10-22T10:48:54.359928308-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt
+2026-10-22T11:44:01.599458090-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-22T11:44:01.600513601-03:00 [INFO] todotxt_tui::layout::widget::state_categories: TextStyle { bg: Some(Color(DarkGray)), fg: None, modifier: None }
+2026-10-22T11:44:01.600688135-03:00 [INFO] todotxt_tui::file_worker: Init file worker: file: "/home/ookami/Media/Documents/todo.txt", archive: None
+2026-10-22T11:44:01.609368777-03:00 [INFO] todotxt_tui::file_worker: Load tasks from /home/ookami/Media/Documents/todo.txt
+2026-10-22T20:21:43.284832467-03:00 [INFO] todotxt_tui::file_worker: Saving todo tasks to /home/ookami/Media/Documents/todo.txt

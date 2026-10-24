@@ -1,16 +1,15 @@
 -- try doing gS in normal mode, inside the brackets (you need mini.splitjoin)
-vim.pack.add({'https://github.com/catppuccin/nvim', 'https://github.com/David-Kunz/gen.nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/daedlock/matugen.nvim', 'https://github.com/RRethy/base16-nvim',}) --check: catppuccin, gen.nvim
+vim.pack.add({'https://github.com/catppuccin/nvim', 'https://github.com/mason-org/mason-lspconfig.nvim', 'https://github.com/mason-org/mason.nvim', 'https://github.com/neovim/nvim-lspconfig', 'https://github.com/nvim-mini/mini.nvim', 'https://github.com/nvim-treesitter/nvim-treesitter', 'https://github.com/daedlock/matugen.nvim', 'https://github.com/RRethy/base16-nvim', 'https://github.com/hrsh7th/nvim-cmp',}) --check: catppuccin, gen.nvim
 
 MINIS = {'snippets', 'bracketed', 'clue', 'completion', 'cursorword', 'diff', 'files', 'git', 'hipatterns', 'icons', 'move', 'pairs', 'splitjoin', 'surround', 'tabline',} --check: bracketed, cursorword, git, icons, pairs, splitjoin, surround
 TREESITTER = {'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'todotxt', 'java'}
-LSP = {'bashls', 'clangd', 'expert', 'jdtls', 'lua_ls', 'pyright', 'zls',}
+LSP = {'bashls', 'clangd', 'expert', 'jdtls', 'lua_ls', 'pyright', 'zls', 'tinymist',}
 --COLORSCHEME = "catppuccin"
 vim.g.mapleader = ' '
 
 vim.keymap.set('n', '<leader>f',        ':lua MiniFiles.open()<CR>',                                {desc = 'file tree'})
 vim.keymap.set('n', '<leader>t',        ':80vsplit | te<CR>',                                       {desc = 'terminal'})
 vim.keymap.set('n', '<leader>b',        ':lua require("mini.git").show_at_cursor()<CR>',            {desc = 'git history @line'}) --TODO checkme
-vim.keymap.set('v', '<leader>g',        "<cmd>'<,'>Gen<CR>",                                        {desc = 'ask an LLM'})
 
 vim.cmd('set tgc cul cuc nowrap nu sb scs spr sta vb list et sts=4 cc=80 ts=4 sw=2 so=10 siso=10 path+=** icm=split')
 vim.cmd('filetype plugin indent on')
@@ -19,6 +18,31 @@ vim.diagnostic.config({ virtual_text = true, signs = true, severity_sort = true 
 --------------------------------------------------------------------------------
 -- here starts the "backend" so to speak ---------------------------------------
 --------------------------------------------------------------------------------
+
+vim.keymap.set('i', '<C-space>', function()
+  local line = vim.api.nvim_get_current_line()
+  local col = vim.api.nvim_win_get_cursor(0)[2]
+  local str_before = line:sub(1, col)
+
+  -- Extract pattern up to the cursor (e.g., looking for something like "obj_")
+  local prefix = str_before:match("([%w_]+_)$")
+  if not prefix then return end
+
+  -- Scan current buffer lines for words following the pattern
+  local words = {}
+  local seen = {}
+  for _, l in ipairs(vim.api.nvim_buf_get_lines(0, 0, -1, false)) do
+    for match in l:gmatch(prefix .. "(%w+)") do
+      if not seen[match] then
+        seen[match] = true
+        table.insert(words, match)
+      end
+    end
+  end
+
+  -- Trigger Neovim's native completion popup
+  vim.fn.complete(col - #prefix + 1, words)
+end, { expr = false, silent = true })
 
 -- noctalia thingies
 local ok, matugen = pcall(require, 'matugen')
@@ -103,16 +127,5 @@ vim.lsp.config('lua_ls', {
 			diagnostics = {globals = { 'vim' },},
 			workspace = { library = { '${3rd}/love2d/library'},},
 },},})
-
--- gen.nvim setup
-require('gen').setup({
-	model = 'gemma4:e2b',
-	host = 'localhost',
-	port = '11434',
-	show_prompt = 'true',
-	show_model = 'true',
-	display_mode = 'vertical-split',
-
-})
 
 if COLORSCHEME then vim.cmd("colorscheme " .. COLORSCHEME) end
