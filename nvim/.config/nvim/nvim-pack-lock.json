@@ -67,6 +67,10 @@
     "vim-doge": {
       "rev": "03a84072ef21b205237c77986c78914395d646c3",
       "src": "https://github.com/kkoomen/vim-doge"
+    },
+    "vimwiki": {
+      "rev": "a54a3002e229c4b43d69ced170ff77663a5b2c40",
+      "src": "https://github.com/vimwiki/vimwiki"
     }
   }
 }
