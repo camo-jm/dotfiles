@@ -6,10 +6,10 @@ hl.monitor({
 })
 
 local mainMod     = "SUPER"
--- local terminal    = "foot"
 local terminal    = "ghostty" -- "foot"
 local fileManager = "dolphin"
 local menu        = "noctalia msg panel-toggle launcher"
+local browser     = "librewolf"
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("noctalia")
@@ -119,6 +119,27 @@ hl.device({
     sensitivity = -0.5,
 })
 
+hl.workspace_rule({
+  workspace = '1',
+  default = true,
+  default_name = 'λ',
+})
+hl.workspace_rule({
+  workspace = '2',
+  default = true,
+  default_name = 'δ',
+})
+hl.workspace_rule({
+  workspace = '3',
+  default = true,
+  default_name = 'π',
+})
+hl.workspace_rule({
+  workspace = '4',
+  default = true,
+  default_name = 'ω',
+})
+
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
@@ -126,6 +147,7 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("hyprctl switchxkblayout current next"))
 
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -145,7 +167,7 @@ hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
 hl.bind("PRINT",         hl.dsp.exec_cmd("hyprshot -m output -o ~/Downloads"))
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/Downloads"))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
